@@ -25,10 +25,10 @@ title:                 Jason D.C. Yin
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  Ph.D. student in Public Health at The University of Hong Kong. I also happen to have other interests.
+  Ph.D. student in Public Health at The University of Hong Kong with varying other interests.
 
 # A shorter description for the sidebar.
-tagline:               Ph.D. Student and Curious Cat
+tagline:               Ph.D. Candidate and Curious Cat
 
 # A list of keywords for your blog
 keywords:              []
@@ -41,10 +41,10 @@ logo:                  /assets/img/logo.png
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
   # Used by `jekyll-feed`:
-  name:                <Jason> <Yin>
-  email:               <jdyins@gmail.com>
+  name:                Jason Yin
+  email:               jdyins@gmail.com
   # # Used by `jekyll-seo-tag`:
-  # twitter:             <jdcyin>
+  twitter:             jdcyin
 
 # Add links to the sidebar.
 menu:
@@ -97,11 +97,11 @@ google_fonts:          Roboto+Slab:700|Noto+Sans:400,400i,700,700i
 
 # The text font. Expects a string that is a valid CSS font-family value.
 # To change font-weight, see _sass/variables.scss
-font:                  Noto Sans, Helvetica, Arial, sans-serif
+font:                  Arial
 
 # The font used for headings. Expects a string that is a valid CSS font-family value.
 # To change font-weight, see _sass/variables.scss
-font_heading:          Roboto Slab, Helvetica, Arial, sans-serif
+font_heading:          Arial
 
 # The font used for code blocks. Expects a string that is a valid CSS font-family value.
 font_code:             Fira Code, Menlo, Monaco, Consolas, monospace;
