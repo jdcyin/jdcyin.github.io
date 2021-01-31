@@ -3,7 +3,7 @@
 # See also: <https://jsonresume.org/>.
 basics:
   name: "Jason D.C. Yin"
-  label: "Publications"
+  #label: "Publications"
   picture: "https://placehold.it/240x240"
   #email: ""
   #phone: "(912) 555-4321"
