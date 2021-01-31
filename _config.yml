@@ -48,14 +48,14 @@ author:
 
 # Add links to the sidebar.
 menu:
-  - title:             Blog
-    url:               /blog/
   - title:             Academia
-    url:               /projects/
-  - title:             Curriculum Vitae
+    url:               /academia/
+  - title:             Publications
     url:               /resume/
   - title:             Personal Projects
-    url:               /docs/
+    url:               /projects/
+  - title:             Blog
+    url:               /blog/
 
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
@@ -289,6 +289,10 @@ collections:
   projects:
     permalink:         /projects/:path/
     output:            true
+  
+  academia:
+    permalink:         /academia/:path/
+    output:            true 
 
 
 # File inclusion/exclusion
