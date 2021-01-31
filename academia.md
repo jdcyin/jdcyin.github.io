@@ -1,8 +1,8 @@
 ---
 layout: projects
-title: Research Projects
+title: Academic Projects
 show_collection: academia
 description: >
-  Research projects I am currently working on
+  Academic research projects I am currently working on.
 no_groups: true
 ---
