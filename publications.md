@@ -3,7 +3,7 @@ layout: page
 title: Publications
 sitemap: false
 description: >
-  Below are my academic publications. Journal name in <p style="color:#3EA99F">blue</p>
+  Below are my academic publications. Journal name in <span style="color:#3EA99F">blue</span>
 ---
 
 Bloom, J., Katsuma, Yasushi, Rao, K. D., Makimoto, Saeda, <p style="color:#E67451">Yin, J.D.C.</p>, Leung, G.M. (2019) Next steps towards universal health coverage call for global leadership. <p style="color:#3EA99F">British Medical Journal.</p>
