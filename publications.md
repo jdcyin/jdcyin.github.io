@@ -4,44 +4,18 @@ title: Publications
 sitemap: false
 ---
 
-Below are my academic publications
+Below are my academic publications:
 
-More than one year ago I was looking for a blogging platform but couldn't find it:
-One that would let me write posts in markdown with my own editor,
-one that didn't look awful buy modern design standards, and one that felt snappy on a mobile phone.
-That and more is now Hydejack. I hope you enjoy it [as much as I do](https://qwtel.com/).
+Bloom, J., Katsuma, Yasushi, Rao, K. D., Makimoto, Saeda, <b>Yin, J.D.C.</b>, Leung, G.M. (2019) Next steps towards universal health coverage call for global leadership. British Medical Journal.
 
-## First Steps
-Start by reading the [Documentation]{:.heading.flip-title}.
-Specifically, the chapters below should be relevant now:
+Qian, J., He, J., and <b>Yin, J.D.C.</b> (2019). The medical arms race and its impact in Chinese hospitals: implications
+for health regulation and planning. Health Policy and Planning
 
-* [Install]{:.heading.flip-title} --- How to install and run Hydejack.
-* [Config]{:.heading.flip-title} --- Once Jekyll is running you can start with basic configuration.
-{:.related-posts.faded}
+<b>Yin, J. D. C.</b>, & He, A. J. (2018). Health insurance reforms in Singapore and Hong Kong: How the two
+ageing asian tigers respond to health financing challenges? Health Policy. 
 
-After you've familiarized yourself with Hydejack, you can delete the following folders and files
-containing example content:
+<b>Yin, J. D. C.</b>, Sidharta, S. D., Yoong, J. S.Y., & Khan, M. S. (2018). High use of private providers for
+first healthcare seeking by drug-resistant tuberculosis patients: a cross-sectional study in Yangon,
+Myanmar. BMC Health Services Research.
 
-~~~
-├── _featured_categories
-│   └── example.md
-├── _projects
-│   └── *
-├── docs
-├── example
-├── licenses
-├── assets
-│   └── img
-│       ├── blog
-│       ├── docs
-│       └── projects
-├── CHANGELOG.md
-├── forms-by-example.md
-├── LICENSE.md
-└── NOTICE.md
-~~~
 
-[documentation]: docs/README.md
-[install]: docs/install.md
-[upgrade]: docs/upgrade.md
-[config]: docs/config.md
