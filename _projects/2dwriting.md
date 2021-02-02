@@ -1,10 +1,10 @@
 ---
 layout: project
-title: 'Hydejack Site'
-caption: Dogfooding Hydejack to sell Hydejack.
+title: '2D-Writing'
+caption: A tool designed to help writers write smarter.
 description: >
-  While Hydejack is built for personal sites, it's versatility allows it to be used a product page as well.
-date: '01-01-2016'
+  2D-Writing is a tool designed to help writers add clarity to sentences for argumentative writing pieces. It was built with classmates Antoine de Saint German (Ph.D., Mathematics, HKU) and Hidetoshi Tominaga (Master's in Architecture, HKU)
+date: '01-01-2021'
 image: 
   path: /assets/img/projects/hydejack-site.jpg
   srcset: 
@@ -13,7 +13,7 @@ image:
     480w:  /assets/img/projects/hydejack-site@0,25x.jpg
 links:
   - title: Link
-    url: https://hydejack.com/
+    url: 
 sitemap: false
 ---
 
