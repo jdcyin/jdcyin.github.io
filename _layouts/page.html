@@ -21,6 +21,10 @@ layout: base
   <header>
     <h1 class="page-title">{{ page.title }}</h1>
     {% include components/message.html text=page.description hide=page.hide_description %}
+	
+    {% include components/message.html text=project.description hide=page.hide_description property="description" alt="" %}
+    {% if project.caption %}<meta property="disambiguatingDescription" content="{{ project.caption }}"/>{% endif %}
+	
   </header>
 
   {{ content }}

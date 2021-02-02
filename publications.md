@@ -2,6 +2,8 @@
 layout: page
 title: Publications
 sitemap: false
+description: >
+  Journal in X Impact factor in Y
 ---
 
 Below are my academic publications:
