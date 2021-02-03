@@ -7,7 +7,7 @@ description: >
 date: 04 Apr 2020
 image: /assets/img/academia/covidihrlogo.jpg
 links:
-  - title: Website Link
+  - title: LINK
     url: https://pandemics-borders.webflow.io/
 
 accent_color: '#4fb1ba'

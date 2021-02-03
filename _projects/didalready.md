@@ -7,7 +7,7 @@ description: >
 date: 01 Jan 2015
 image: /assets/img/projects/didalready.jpg
 links:
-  - title: Did Already
+  - title: LINK
     url: https://jdcyin.github.io/didalready
 accent_color: '#4fb1ba'
 accent_image:
