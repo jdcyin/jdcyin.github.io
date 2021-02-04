@@ -290,7 +290,7 @@ collections:
     permalink:         /personalprojects/:path/
     output:            true
   
-  projects:
+  academicprojects:
     permalink:         /academicprojects/:path/
     output:            true 
 
