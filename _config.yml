@@ -52,8 +52,8 @@ menu:
     url:               /academicprojects/
   - title:             Personal Projects
     url:               /projects/
-  - title:             Publish & Present
-    url:               /publications/
+  - title:             Proof of Work
+    url:               /proofofwork/
   - title:             Blog
     url:               /blog/
 
