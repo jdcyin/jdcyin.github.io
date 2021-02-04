@@ -1,10 +1,9 @@
 ---
 layout: post
-title: Introducing Hydejack 9
-image: /assets/img/blog/hydejack-9.jpg
+title: Name Holder
+image: 
 description: >
-  Version 9 is the most complete version of Hydejack yet.
-  Modernized design, big headlines, and big new features.
+  For when I have something interesting to say.
 sitemap: false
 ---
 
