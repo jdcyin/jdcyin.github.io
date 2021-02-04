@@ -48,12 +48,12 @@ author:
 
 # Add links to the sidebar.
 menu:
-  - title:             Academia
-    url:               /academia/
-  - title:             Publications
-    url:               /publications/
+  - title:             Academic Projects
+    url:               /academicprojects/
   - title:             Personal Projects
     url:               /projects/
+  - title:             Publish & Present
+    url:               /publications/
   - title:             Blog
     url:               /blog/
 
