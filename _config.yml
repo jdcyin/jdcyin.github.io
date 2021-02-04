@@ -49,7 +49,7 @@ author:
 # Add links to the sidebar.
 menu:
   - title:             Academic Projects
-    url:               /academia/
+    url:               /academicproject/
   - title:             Personal Projects
     url:               /projects/
   - title:             Proof of Work
