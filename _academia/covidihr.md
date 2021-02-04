@@ -9,10 +9,5 @@ image: /assets/img/academia/covidihrlogo.jpg
 links:
   - title: LINK
     url: https://pandemics-borders.webflow.io/
-
-accent_color: '#4fb1ba'
-accent_image:
-  background: 'linear-gradient(to bottom, #0a7b81 0%, #01636e 25%, #02505b 50%, #073a4a 75%, #082e39 100%)'
-  overlay:    false
 sitemap: false
 ---
