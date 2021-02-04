@@ -49,9 +49,9 @@ author:
 # Add links to the sidebar.
 menu:
   - title:             Academic Projects
-    url:               /acade,oa/
+    url:               /academia/
   - title:             Personal Projects
-    url:               /personalprojects/
+    url:               /projects/
   - title:             Proof of Work
     url:               /proofofwork/
   - title:             Blog
@@ -287,7 +287,7 @@ collections:
     output:            true
 
   projects:
-    permalink:         /personalprojects/:path/
+    permalink:         /projects/:path/
     output:            true
   
   academia:
