@@ -14,4 +14,5 @@ Outside of academia, I like to travel, camp, coasteer (coastal hiking), learn la
 
 <!--projects-->
 
-Thanks for stopping by.
+
+<h2>Thanks for stopping by.</h2>
