@@ -7,6 +7,7 @@ description: >
 ---
 
 <h2>Publications</h2>
+<hr>
 
 Bloom, J., Katsuma, Yasushi, Rao, K. D., Makimoto, Saeda, <span style="color:#E67451; font-weight:bold">Yin, J.D.C.</span>, Leung, G.M. (2019) Next steps towards universal health coverage call for global leadership. <span style="color:#3EA99F">British Medical Journal.</span>
 
@@ -18,3 +19,4 @@ Qian, J., He, J., and <span style="color:#E67451; font-weight:bold">Yin, J.D.C.<
 first healthcare seeking by drug-resistant tuberculosis patients: a cross-sectional study in Yangon, Myanmar. <span style="color:#3EA99F">BMC Health Services Research.</span>
 
 <h2>Presentations</h2>
+<hr>
