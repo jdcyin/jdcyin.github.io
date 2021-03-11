@@ -9,7 +9,7 @@ I am a Ph.D. student in Public Health, studying at The University of Hong Kong, 
 <p>
 In addition to the work on infodemiology, I also collaborate with other researchers on public health-related research. A few of my recent projects are accessible 
 <a href="https://jdcyin.github.io/academia/"> HERE </a>
-
+<p>
 Outside of academia, I like to travel, camp, coasteer (coastal hiking), learn languages, rollerblade, and try my hand at some new stuff. Some examples of the aforementioned are below.
 
 ## Personal Projects
