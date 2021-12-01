@@ -1,6 +1,6 @@
 ---
 layout: grid
-title:  queerness
+title:  Queerness
 slug:   queerness
 description: >
   Queer things
