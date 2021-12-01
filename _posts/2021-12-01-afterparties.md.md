@@ -7,7 +7,7 @@ description: >
 sitemap: false
 ---
 
-The book was made aware to my by a colleague, who'd recommended it on its 'edginess', and how it had reminded me of them. The story is written by So, a gay, Cambodian-American (<i>not</i> Asian-American) kid, who grew up in Stockton, California. He weaves in the narratives of the people he grew up with across chapters, alongside themes of genocide, immigration, queerness, and its unfolding in suburban, middle America. A great read. <p>
+The book was made aware to my by a colleague, who'd recommended it on its 'edginess', and how it had reminded them of me. The story is written by So, a gay, Cambodian-American (<i>not</i> Asian-American) kid, who grew up in Stockton, California. He weaves in the narratives of the people he grew up with across chapters, alongside themes of genocide, immigration, queerness, and its unfolding in suburban, middle America. A great read. <p>
 
 Two chapters especially stuck out. Spoiler alert for those planning to read it. First is the chapter on the afterparty of a cousin's wedding, whereby So uses the afterparty as the metaphor for grounds where all the pleasures of the present and pains of the past converge, as told through the lens of two brothers. So overlays this chapter beautifully with dialogue and narrative that is both desperate and hopeful, jaded but yearning, for something more. There are several quotes that speak on this well below:<p>
 
