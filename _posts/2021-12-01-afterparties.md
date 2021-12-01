@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Afterparties"
+categories: [books]
+tags:       [books]
 image: /assets/img/posts/afterparties.jpg
 description: >
   Thoughts on Anthony Veasna So's book, published posthumously
