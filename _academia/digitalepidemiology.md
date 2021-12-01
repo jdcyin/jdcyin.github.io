@@ -13,9 +13,9 @@ sitemap: false
 ---
 
 <h3>In this series:</h3>
+<br>
 <h4> In Progress: Risk Perception during Pandemics - A Scoping Review
 
-<p>
+<br>
 
-<h3>In this series:</h3>
 <h4> In Progress: Risk Perception during Pandemics - A Scoping Review

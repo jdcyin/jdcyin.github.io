@@ -28,7 +28,7 @@ sitemap: false
 ## What's in the Cards?
 
 #Hydejack 9 now lets you use content cards for both projects and posts. 
-#The cards have been redesigned with a new hover style and drop shadows and they retain their unique transition-to-next-page animations, which now also work on the `blog` layout. The new `grid` layout lets you do that.
+TESTING TO SEE IF THIS WORKS. WORK. 
 
 #Good images are key to making the most out of content cards. For that reason, a [chapter on images](../../docs/basics.md#adding-images) has been added to the documentation.
  
