@@ -2,7 +2,7 @@
 layout: post
 title: "Afterparties"
 categories: [books]
-tags:       [books]
+tags:       [queerness]
 image: /assets/img/posts/afterparties.jpg
 description: >
   Thoughts on Anthony Veasna So's book, published posthumously
