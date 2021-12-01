@@ -12,8 +12,6 @@ In addition to the work on infodemiology, I also collaborate with other research
 <p>
 Outside of academia, I like to travel, camp, coasteer (coastal hiking), learn languages, rollerblade, and try my hand at some new stuff. Some examples of the aforementioned are below.
 
-## Personal Projects
-
 <!--projects-->
 
 

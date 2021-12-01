@@ -3,7 +3,7 @@ layout: post
 title: Name Holder
 image: 
 description: >
-  For when I have something interesting to say.
+  Description here 
 sitemap: false
 ---
 
