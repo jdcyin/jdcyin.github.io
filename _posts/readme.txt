@@ -1,4 +1,5 @@
-Post names arranged by type, and specific type.
+Post names arranged by type, and specific type. 
+All files must have YYYY-MM-DD-POST-NAME-..-..-..-.. .md
 
 e.g.
 
