@@ -1,8 +1,8 @@
 ---
 layout: projects
-title: Personal Projects
+title: Personal
 show_collection: projects
 description: >
-  Personal projects I am currently working on
+  Other projects, my travel website, and things that did not have anywhere else to belong.  
 no_groups: true
 ---
