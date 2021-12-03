@@ -15,4 +15,4 @@ Two chapters especially stuck out. Spoiler alert for those planning to read it. 
 
 The second chapter that stuck out is the final one, in which So writes from the perspective of his mother to him, as she recounts a memory she had of So. The mother speaks to him from afar, a distant tone, but one in which the mother sees truth about how So is in the world. In writing from the mothers view, So vocalises how he has come to be from his mother; how she has shaped him, and ultimately inspired him to write -- and, since his passing, leave behind -- this book. 
 
-That there can be something written so simply but relatable is commendable from me. I found myself in tears in some chapters, relating to this dead guy, and all the stories he's left behind; a theme distant at first, but by the end, so close to home.
+That there can be something written so simply but relatable took me by surprise. Some chapters, I found myself in tears, relating to this dead guy, and all the stories he's left behind; a theme at first distant but by the end so close to home.
