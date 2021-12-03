@@ -12,10 +12,10 @@ links:
 sitemap: false
 ---
 
-<h3>In this series:</h3>
+<h4>In this series:</h4>
 <br>
-<h4> In Progress: Risk Perception during Pandemics - A Scoping Review
+In Progress: Risk Perception during Pandemics - A Scoping Review
 
-<br>
+<p>
 
-<h4> National and State-level Dissonance on COVID-19 Vaccination Reporting - 
+In Progress: National and State-level Dissonance on COVID-19 Vaccination Reporting - 
