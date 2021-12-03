@@ -1,7 +1,7 @@
 ---
 layout: grid
 title:  Asian-America
-slug:   asian-america
+slug:   Asian-America
 description: >
   Asian American things
 ---
