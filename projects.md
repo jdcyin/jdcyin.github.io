@@ -1,8 +1,8 @@
 ---
 layout: projects
-title: Personal
+title: Personal Projects
 show_collection: projects
 description: >
-  Other projects, my travel website, and things that did not have anywhere else to belong.  
+  My travel website, other projects, and things that did not have anywhere else to belong.  
 no_groups: true
 ---

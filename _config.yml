@@ -50,10 +50,10 @@ author:
 menu:
   - title:             Academic Projects
     url:               /academia/
-  - title:             Personal
-    url:               /projects/
   - title:             Proof of Work
     url:               /proofofwork/
+  - title:             Personal Projects
+    url:               /projects/
   - title:             Blog
     url:               /blog/
 
