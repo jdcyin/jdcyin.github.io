@@ -5,7 +5,7 @@ sitemap: false
 cover: true
 ---
 
-I'm a Ph.D. student in Public Health, at The University of Hong Kong, Li Ka Shing Faculty of Medicine, School of Public Health. My academic interests centre around integrating new data types -- social media, traditional media, <i>i.e.</i> social data -- for public health research; a growing field known as <i>digital epidemiology</i>. Currently, I use computational analysis of traditional media to measure risk perception and framing of pandemics, and measure social networks and their impact disease trajectories. My supervisor is Professor Gabriel M. Leung. 
+I'm a Ph.D. student in Public Health, at The University of Hong Kong, Li Ka Shing Faculty of Medicine, School of Public Health. My academic interests centre around integrating new data types -- social media, traditional media, <i>i.e.</i> social data -- for public health research; a growing field known as <i>infodemiology</i>. Currently, I analyse social networks to identify spread of misinformation. My supervisors are Professor Gabriel M. Leung and Dr. Karen A. Grépin. 
 
 <br>
 
@@ -14,6 +14,6 @@ I also collaborate with other researchers. A few of my recent projects are acces
 
 <br>
 
-Outside of academia, I like to travel, camp, coasteer (coastal hiking), learn languages, rollerblade, and try new stuff. Check out the <b><a href="https://jdcyin.github.io/projects">Personal</a></b> tab on the left.
+Outside of academia, I travel, camp, coasteer (coastal hiking), learn languages, rollerblade, and try new stuff. Check out the <b><a href="https://jdcyin.github.io/projects">Personal Projects</a></b> tab on the left.
 
 <h2>Thanks for stopping by</h2>
