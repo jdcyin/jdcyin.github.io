@@ -14,8 +14,9 @@ sitemap: false
 
 <h4>In this series:</h4>
 <br>
+
 In Progress: Risk Perception during Pandemics - A Scoping Review
 
 <p>
 
-In Progress: National and State-level Dissonance on COVID-19 Vaccination Reporting - 
+In Progress: Network analysis in Taiwan for identifying opinion leaders and information dissemination dynamics 
