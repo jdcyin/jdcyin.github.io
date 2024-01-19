@@ -5,7 +5,7 @@ caption: Series of papers exploring social data's use for public health (field o
 description: >
   Looking at ways in which social data (traditional media, social media) can supplement public health research.
 date: 01 Sep 2019
-image: 
+image: /assets/img/academia/infodemiology.png
 links:
   - title: 
     url: 
@@ -15,8 +15,8 @@ sitemap: false
 <h4>In this series:</h4>
 <br>
 
-In Progress: Risk Perception during Pandemics - A Scoping Review
+In Progress: Risk perception during pandemics - a scoping review
 
 <p>
 
-In Progress: Network analysis in Taiwan for identifying opinion leaders and information dissemination dynamics 
+In Progress: A series of network analysis in Taiwan (Thesis) 
