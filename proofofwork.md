@@ -3,11 +3,13 @@ layout: page
 title: Proof of Work
 sitemap: false
 description: >
-  Below are my academic publications and presentations. Journal names and presentation events in <span style="color:#3EA99F">blue</span>
+  Below are my academic publications and presentations. Journal names and presentation events in <span style="color:#3EA99F">blue</span>. My Google Scholar profile is <b><a href="https://scholar.google.com/citations?user=T0sKzxQAAAAJ&hl=en"> HERE </a></b>.
 ---
 
 <h2>Publications</h2>
 <hr>
+
+<span style="color:#E67451; font-weight:bold">Yin, J.D.C.</span>. (2022). Media data and vaccine hesitancy: a scoping review <span style="color:#3EA99F; font-weight:bold">JMIR Infodemiology.</span>
 
 <span style="color:#E67451; font-weight:bold">Yin, J.D.C.</span>. (2021). WHO, COVID-19, and Taiwan as the Ghost Island. <span style="color:#3EA99F; font-weight:bold">Global Public Health.</span>
 
