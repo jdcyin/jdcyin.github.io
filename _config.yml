@@ -42,7 +42,7 @@ logo:                  /assets/img/facepic.jpg
 author:
   # Used by `jekyll-feed`:
   name:                Jason Yin
-  email:               jdyins@gmail.com
+  email:               jdcyins@gmail.com
   # # Used by `jekyll-seo-tag`:
   twitter:             jdcyin
 
@@ -353,7 +353,7 @@ plugins:
 
 # Used on index and about sites
 social:
-   email:               jdyins@gmail.com
+   email:               jdcyins@gmail.com
    name:                Jason Yin
    links:
      - https://twitter.com/jdcyin
