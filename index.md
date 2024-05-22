@@ -9,11 +9,6 @@ I'm a Ph.D. student in Public Health, at The University of Hong Kong, Li Ka Shin
 
 <br>
 
-I also collaborate with other researchers. A few of my recent projects are accessible on the
-<b><a href="https://jdcyin.github.io/academia/"> Academic Projects </a></b> tab
-
-<br>
-
-Outside of academia, I travel, camp, coasteer (coastal hiking), learn languages, rollerblade, and try new stuff. Check out the <b><a href="https://jdcyin.github.io/projects">Personal Projects</a></b> tab on the left.
+Outside of academia, I travel, camp, coasteer (coastal hiking), learn languages, rollerblade, and try new things. Check out the <b><a href="https://jdcyin.github.io/projects">Personal Projects</a></b> tab on the left.
 
 <h2>Thanks for stopping by</h2>

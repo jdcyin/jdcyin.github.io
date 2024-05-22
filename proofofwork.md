@@ -3,7 +3,7 @@ layout: page
 title: Proof of Work
 sitemap: false
 description: >
-  Below are my academic publications and presentations. Journal names and presentation events in <span style="color:#3EA99F">blue</span>. My Google Scholar profile is <b><a href="https://scholar.google.com/citations?user=T0sKzxQAAAAJ&hl=en"> HERE </a></b>.
+  Below are my publications and presentations. My Google Scholar profile is <b><a href="https://scholar.google.com/citations?user=T0sKzxQAAAAJ&hl=en"> HERE </a></b>.
 ---
 
 <h2>Publications</h2>
