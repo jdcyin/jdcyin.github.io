@@ -4,8 +4,11 @@ title: Hello
 sitemap: false
 cover: true
 ---
+I'm currently an analyst at The Economist in their health practice.
 
-Ph.D. candidate, The University of Hong Kong, Li Ka Shing Faculty of Medicine, School of Public Health. Research field: integrating social media data for public health research; a growing field known as <i>infodemiology</i>. Currently analysing social networks to identify spread of misinformation. My supervisors are Professor Gabriel M. Leung and Dr. Karen A. Grépin. 
+<p>
+Previously did my Ph.D. in Public Health, the School of Public Health, The University of Hong Kong. Research field: infodemiology. Supervised by Professors Gabriel M. Leung and Karen A. Grépin.
+
 
 <br>
 
