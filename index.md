@@ -7,7 +7,7 @@ cover: true
 
 <style>
     p {
-       margin-bottom: 30px; /* Adjust this value for desired space */
+       margin-bottom: 50px; /* Adjust this value for desired space */
     }
 </style>
 	
