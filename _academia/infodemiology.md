@@ -17,7 +17,7 @@ sitemap: false
 
 <span style="color:#E67451; font-weight:bold">Yin, Jason D. C.</span>, Wu Tzu-Chin, Chen Jia-Yun, Lin Fen, Wang Xiaohui (2024). Vaccine voices in the digital sphere: a multilayer network analysis of online forum discussion in Taiwan. <span style="color:#3EA99F; font-weight:bold">JMIR Infodemiology</span>.
 
-<span style="color:#E67451; font-weight:bold">Yin, Jason D. C.</span> (2024). Vaccine Hesitancy in Taiwan: Temporal, Multilayer Network Study of Echo Chambers Shaped by Influential Users<span style="color:#3EA99F; font-weight:bold">Online Journal of Public Health Informatics</span>.
+<span style="color:#E67451; font-weight:bold">Yin, Jason D. C.</span> (2024). Vaccine Hesitancy in Taiwan: Temporal, Multilayer Network Study of Echo Chambers Shaped by Influential Users.<span style="color:#3EA99F; font-weight:bold"> Online Journal of Public Health Informatics</span>.
 
 <span style="color:#E67451; font-weight:bold">Yin, Jason D. C.</span> (2024). Vaccine voices in the digital sphere: a multilayer network analysis of online forum discussion in Taiwan. <span style="color:#3EA99F; font-weight:bold">CARMA Conference Proceedings</span>.
 
