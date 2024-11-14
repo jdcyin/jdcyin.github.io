@@ -1,9 +1,3 @@
-Testing the details here
-
-Does it still work? 
-
-Not sure 
-
 ---
 layout: projects
 title: Academia
@@ -13,3 +7,8 @@ description: >
 no_groups: false
 ---
 
+Testing the details here
+
+Does it still work? 
+
+Not sure 
