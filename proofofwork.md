@@ -5,12 +5,14 @@ sitemap: false
 description: >
   Below are my publications and presentations. My Google Scholar profile is <b><a href="https://scholar.google.com/citations?user=T0sKzxQAAAAJ&hl=en"> HERE </a></b>.
 ---
-<h2>The Economist publications</h2>
+<h2><span style="color: red;">The Economist</span>publications</h2>
 <hr>
 
 <a href="https://cdn.vev.design/private/dxKXjfeMmXYneLoysTDvA8tTZQN2/2hage-ai-vision-to-reality-roche-article-sep-2024.pdf"> From vision to reality: AI’s role in redefining integrated patient-centred care in Australia, Japan, and South Korea </a>
 
-<h2>The Economist presentations/conferences</h2>
+<h2><span style="color: red;">The Economist</span> presentations/conferences</h2>
+<hr>
+
 
 <h2>Academic publications</h2>
 <hr>
