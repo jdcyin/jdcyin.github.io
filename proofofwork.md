@@ -5,8 +5,14 @@ sitemap: false
 description: >
   Below are my publications and presentations. My Google Scholar profile is <b><a href="https://scholar.google.com/citations?user=T0sKzxQAAAAJ&hl=en"> HERE </a></b>.
 ---
+<h2>The Economist publications</h2>
+<hr>
 
-<h2>Publications</h2>
+<a href="https://cdn.vev.design/private/dxKXjfeMmXYneLoysTDvA8tTZQN2/2hage-ai-vision-to-reality-roche-article-sep-2024.pdf"> From vision to reality: AI’s role in redefining integrated patient-centred care in Australia, Japan, and South Korea </a>
+
+<h2>The Economist presentations/conferences</h2>
+
+<h2>Academic publications</h2>
 <hr>
 
 <span style="color:#E67451; font-weight:bold">Yin, Jason D. C.</span> (2024). Vaccine voices in the digital sphere: a multilayer network analysis of online forum discussion in Taiwan. <span style="color:#3EA99F; font-weight:bold">CARMA Conference Proceedings</span>.
@@ -26,7 +32,7 @@ Qian, J., He, J., and <span style="color:#E67451; font-weight:bold">Yin, Jason D
 <span style="color:#E67451; font-weight:bold">Yin, Jason D. C.</span>, Sidharta, S. D., Yoong, J. S.Y., & Khan, M. S. (2018). High use of private providers for
 first healthcare seeking by drug-resistant tuberculosis patients: a cross-sectional study in Yangon, Myanmar. <span style="color:#3EA99F; font-weight:bold">BMC Health Services Research.</span>
 
-<h2>Presentations/Conferences</h2>
+<h2>Academic presentations/conferences</h2>
 <hr>
 
 <span style="color:#E67451; font-weight:bold">Yin, Jason D. C.</span> (2024). Vaccine voices in the digital sphere: a multilayer network analysis of online forum discussion in Taiwan. <span style="color:#3EA99F; font-weight:bold">CARMA Conference 2024</span>.
