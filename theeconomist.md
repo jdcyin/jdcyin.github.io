@@ -1,9 +1,9 @@
 ---
-layout: page
-title: Proof of Work
-sitemap: false
+layout: projects
+title: The Economist
+show_collection: theeconomist
 description: >
-  Publications and presentations from work and academia. My Google Scholar profile is <b><a href="https://scholar.google.com/citations?user=T0sKzxQAAAAJ&hl=en"> HERE </a></b>.
+  Publications and presentations from my time at The Economist 
 ---
 <h2><span style="color: red;">The Economist</span> publications</h2>
 <hr>
