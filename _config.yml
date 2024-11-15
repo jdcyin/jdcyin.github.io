@@ -294,7 +294,9 @@ collections:
     permalink:         /academia/:path/
     output:            true 
 
-
+  tjeecpmp,ost:
+    permalink:         /theeconomist/:path/
+    output:            true 
 # File inclusion/exclusion
 # ----------------------------------------------------------------------------------------
 
