@@ -11,8 +11,6 @@ links:
 sitemap: false
 ---
 
-Economist Impact’s 2023 Digital Health Barometer, supported by Roche, evaluated the enabling environment for digital health across ten countries. 
+In 2023, Economist Impact wrote the Digital Health Barometer, which evaluated the enabling environment for digital health across ten countries. They found that well-integrated and patient-centred care should be at the forefront of the digital health agenda. 
 
-<p> They found that well-integrated and patient-centred care should be at the forefront of the digital health agenda. 
-
-<p>In this short article we focus on how AI is advancing integrated and patient-centred care in Australia, Japan and South Korea.
+<p>This article is a continuation of that work and focuses on how AI is advancing integrated and patient-centred care in Australia, Japan and South Korea.
