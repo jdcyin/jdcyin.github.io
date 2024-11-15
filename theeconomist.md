@@ -11,7 +11,6 @@ description: >
 <a href="https://cdn.vev.design/private/dxKXjfeMmXYneLoysTDvA8tTZQN2/2hage-ai-vision-to-reality-roche-article-sep-2024.pdf"> From vision to reality: AI’s role in redefining integrated patient-centred care in Australia, Japan, and South Korea </a>
 
 <h2><span style="color: red;">The Economist</span> presentations/conferences</h2>
-<hr>
 
 
 <h2>Academic publications</h2>
