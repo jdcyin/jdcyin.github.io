@@ -17,5 +17,9 @@ group :jekyll_plugins do
   gem "jekyll-paginate"
 end
 
+git_source(:github) { |jdcyin| "https://github.com/#jdcyin" }
+
 gem 'wdm' if Gem.win_platform?
 gem "tzinfo-data" if Gem.win_platform?
+
+gem "github-pages", group: :jekyll_plugins
