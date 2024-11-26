@@ -3,7 +3,7 @@
 # Change `author1` to your shortname.
 author1:
   name:              Jason Yin
-  email:             jdcyins@gmail.com
+  email:             jy@jasonyin.com
 
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
@@ -21,7 +21,7 @@ author1:
   # Rearrange to change the order in which they appear
   social:
     # twitter:         jdcyin
-    # email:           jdcyins@gmail.com
+    # email:           jy@jasonyin.com
     # rss:             https://<url>/feed.xml
     # facebook:        <username>
     # google:          <number>
