@@ -65,11 +65,11 @@ menu:
 copyright:             © 2020-2024. All rights reserved.
 
 # Format of the permalinks
-permalink:             /readalready/:year-:month-:day-:title/
+permalink:             /posts/:year-:month-:day-:title/
 
 # Pagination configuration (used by the `blog` layout)
 paginate:              10
-paginate_path:         /readalready/:num/
+paginate_path:         /posts/:num/
 
 
 # Theme
@@ -278,7 +278,13 @@ hydejack:
 # ----------------------------------------------------------------------------------------
 
 collections:
+#  featured_categories:
+#    permalink:         /readalready/:path/
+#    output:            true
 
+  featured_tags:
+    permalink:         /readalready/tag-:name/
+    output:            true
 
   projects:
     permalink:         /projects/:path/
