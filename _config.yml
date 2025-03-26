@@ -280,11 +280,11 @@ hydejack:
 collections:
   featured_categories:
     permalink:         /readalready/:path/
-    output:            true
+    output:            false
 
   featured_tags:
-    permalink:         /tag-:name/
-    output:            false
+    permalink:         /readalready/tag-:name/
+    output:            true
 
   projects:
     permalink:         /projects/:path/
