@@ -55,7 +55,7 @@ menu:
   - title:             Personal Projects
     url:               /projects/
   - title:             Read Already
-    url:               /blog/
+    url:               /readalready/
 
 # Add links to the footer
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
@@ -65,11 +65,11 @@ menu:
 copyright:             © 2020-2024. All rights reserved.
 
 # Format of the permalinks
-permalink:             /blog/:categories/:year-:month-:day-:title/
+permalink:             /readalready/:categories/:year-:month-:day-:title/
 
 # Pagination configuration (used by the `blog` layout)
 paginate:              10
-paginate_path:         /blog/:num/
+paginate_path:         /readalready/:num/
 
 
 # Theme
@@ -279,7 +279,7 @@ hydejack:
 
 collections:
   featured_categories:
-    permalink:         /blog/:name/
+    permalink:         /readalready/:name/
     output:            true
 
   featured_tags:

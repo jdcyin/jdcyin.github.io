@@ -1,14 +1,8 @@
 Post names arranged by type, and specific type. 
-All files must have YYYY-MM-DD-POST-NAME-..-..-..-.. .md
+All files must have YYYY-MM-DD-POST-booknamenospacelowercase
 
-e.g.
-
-TYPE_SPECIFIC.TYPE
-
-TYPES
-book = book reflections, book review
-thought = random thoughts
-
-SPECIFIC.TYPE
-book titles;
-main theme of thoughts
+"Categories" will only ever be [books]
+"tags:" will always include country. but can include other themes
+- queerness
+- asian-america
+- adventure
