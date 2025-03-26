@@ -283,7 +283,7 @@ collections:
 #    output:            true
 
   featured_tags:
-    permalink:         /readalready/tag-:name/
+    permalink:         /readalready/:name/
     output:            true
 
   projects:
