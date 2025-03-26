@@ -1,5 +1,7 @@
 ---
 layout: grid
-title:  French books
+title:  France
 slug:   france
+description: >
+  French books
 ---
