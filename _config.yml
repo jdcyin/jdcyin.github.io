@@ -278,9 +278,9 @@ hydejack:
 # ----------------------------------------------------------------------------------------
 
 collections:
-#  featured_categories:
-#    permalink:         /readalready/:path/
-#    output:            true
+  featured_categories:
+    permalink:         /readalready/:path/
+    output:            true
 
   featured_tags:
     permalink:         /readalready/:name/
