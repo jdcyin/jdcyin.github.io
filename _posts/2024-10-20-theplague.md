@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Plague"
-categories: [books]
+categories: [albert-camus]
 tags:       [france]
 image: /assets/img/posts/theplague.jpg
 description: >

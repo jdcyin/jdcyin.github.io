@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Corrections"
-categories: [books]
+categories: [jonathan-franzen]
 tags:       [america]
 image: /assets/img/posts/thecorrections.jpg
 description: >

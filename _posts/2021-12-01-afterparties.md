@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Afterparties"
-categories: [books]
+categories: [anthony-veasna-so]
 tags:       [america, queerness, asian-america]
 image: /assets/img/posts/afterparties.jpg
 description: >
