@@ -1,7 +1,7 @@
 ---
 layout: grid
 title:  Gabriel García Márquez
-slug:   books
+slug:   gabriel-garcia-marquez
 description: >
   Books by Gabriel García Márquez
 ---

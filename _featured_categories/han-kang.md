@@ -1,7 +1,7 @@
 ---
 layout: grid
 title:  Han Kang (한강)
-slug:   books
+slug:   han-kang
 description: >
   Books by Han Kang (한강)
 ---
