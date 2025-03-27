@@ -1,3 +1,13 @@
+/* Make post titles bigger */
 .post-title {
-  font-size: 2rem; /* or whatever size you prefer */
+  font-size: 2rem; /* Or whatever size you like */
+  line-height: 1.3;
+  font-weight: 700;
 }
+
+/* Make body text slightly larger */
+.post-content {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
