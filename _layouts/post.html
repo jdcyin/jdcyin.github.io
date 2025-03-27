@@ -22,7 +22,7 @@ layout: base
 <hr class="dingbat related" />
 
 {% assign addons = page.addons | default:site.hydejack.post_addons %}
-{% unless addons %}{% assign addons = "about,newsletter,related,random" | split:"," %}{% endunless %}
+{% unless addons %}{% assign addons = "about,newsletter,related,other" | split:"," %}{% endunless %}
 {% for addon in addons %}
   {% case addon %}
   {% when 'about' %}
@@ -31,8 +31,8 @@ layout: base
     {% include if-non-null try="pro/newsletter.html" %}
   {% when 'related' %}
     {% include if-non-null try="pro/related-posts.html" fallback="components/related-posts.html" %}
-  {% when 'random' %}
-    {% include if-non-null try="pro/random-posts.html" %}
+  {% when 'other' %}
+    {% include if-non-null try="pro/other-posts.html" %}
   {% when 'comments' %}
     {% include body/comments.html %}
   {% else %}
