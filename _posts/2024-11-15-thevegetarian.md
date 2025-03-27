@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Vegetarian"
-categories: [hankang]
+categories: [han-kang]
 tags:       [obsession]
 image: /assets/img/posts/thevegetarian.jpg
 description: >

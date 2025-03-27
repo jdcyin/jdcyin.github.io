@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Love in the Time of Cholera"
-categories: [gabrielgarciamarquez]
+categories: [gabriel-garcia-marquez]
 tags:       [romance]
 image: /assets/img/posts/loveinthetimeofcholera.jpg
 description: >
