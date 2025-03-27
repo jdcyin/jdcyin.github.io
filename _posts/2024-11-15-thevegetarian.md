@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "The Vegetarian"
-categories: [books]
-tags:       [south korea]
+categories: [hankang]
+tags:       [obsession]
 image: /assets/img/posts/thevegetarian.jpg
 description: >
   Thoughts on Han Kang's book.

@@ -71,9 +71,9 @@ error:
 posted:                'Posted'
 colon:                 ':'
 separator:             '|'
-category_start:        'in '
+category_start:        'by '
 category_spearator:    ' / '
-tag_start:             'by '
+tag_start:             'on '
 tag_separator:         ', '
 from_to_separator:     '–'
 

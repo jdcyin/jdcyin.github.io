@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Love in the Time of Cholera"
-categories: [books]
-tags:       [colombia]
+categories: [gabrielgarciamarquez]
+tags:       [romance]
 image: /assets/img/posts/loveinthetimeofcholera.jpg
 description: >
   Thoughts on Gabriel Garcia Marquez's book.
