@@ -7,7 +7,7 @@ date: 30 Sep 2024
 image: /assets/img/theeconomist/roche_ai-progress-in-asia.jpg
 links:
   - title:  LINK
-    url: https://cdn.vev.design/private/dxKXjfeMmXYneLoysTDvA8tTZQN2/2hage-ai-vision-to-reality-roche-article-sep-2024.pdf
+    url: https://impact.economist.com/health/digitalhealth/ai-progress-in-asia/
 sitemap: false
 ---
 
