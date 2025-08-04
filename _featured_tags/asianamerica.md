@@ -1,7 +1,7 @@
 ---
 layout: grid
 title:  Asian-America
-slug:   asian-america
+slug:   asianamerica
 description: >
   Asian American books
 ---
