@@ -2,7 +2,7 @@
 layout: post
 title: "Afterparties"
 categories: [anthony-veasna-so]
-tags:       [america, queerness, asian-america]
+tags:       [america, queerness, asianamerica]
 image: /assets/img/posts/afterparties.jpg
 description: >
   Thoughts on Anthony Veasna So's book, published posthumously
