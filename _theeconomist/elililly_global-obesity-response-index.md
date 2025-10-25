@@ -1,7 +1,7 @@
 ---
 layout: project
 title: 'Urgency without action' 
-caption: national responses to obesity
+caption: National responses to obesity
 description: >
 date: 14 Oct 2025
 image: /assets/img/theeconomist/elililly_global-obesity-response-index.jpg
