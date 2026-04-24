@@ -1,6 +1,6 @@
 ---
 layout: project
-title: 'Spread Already'
+title: 'SpreadAlready'
 caption: Cheese blog
 description: >
   Started (unseriously) curating the cheese I ate.

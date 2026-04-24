@@ -1,9 +1,9 @@
 ---
 layout: project
-title: 'Seen Already'
-caption: Photography blog
+title: 'SeenAlready'
+caption: Film photography blog
 description: >
-  Started curating the photos I took.
+  A curation of the film photos I took.
 date: 17 Jan 2025
 image: /assets/img/projects/seenalready.jpg
 links:
