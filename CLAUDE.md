@@ -19,7 +19,7 @@ Personal website for Jason D.C. Yin (jasonyin.com). Jekyll 3 site on the Hydejac
 
 - Sidebar menu is defined in `_config.yml` under `menu:`.
 - ReadAlready (`readalready/`, `_posts/`, `_featured_*`) is being migrated away; it is **off the sidebar** but files remain until migration is done.
-- `/projects/` (old "Personal Projects" URL) redirects to `/alritealready/`.
+- The page lives at `/alrite-already/` (with a hyphen) because `jasonyin.com/alritealready/` is taken by the separate `jdcyin/alritealready` GitHub Pages repo, which redirects to alritealready.com. Don't name a page path after any of your other repos (beenalready, seenalready, spreadalready, alritealready). `/projects/` (old "Personal Projects" URL) redirects to `/alrite-already/`.
 
 ### Adding a tile (Academia or The Economist)
 

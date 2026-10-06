@@ -3,7 +3,7 @@ layout: projects
 title: ALRITE ALREADY!
 title_url: https://alritealready.com
 show_collection: projects
-permalink: /alritealready/
+permalink: /alrite-already/
 redirect_from:
   - /projects/
 description: >
