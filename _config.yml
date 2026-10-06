@@ -28,7 +28,7 @@ description:           >
   Analyst at The Economist with varying other interests.
 
 # A shorter description for the sidebar.
-tagline:               Ph.D., Human
+# tagline:             (none)
 
 # A list of keywords for your blog
 keywords:              []
@@ -52,17 +52,15 @@ menu:
     url:               /academia/
   - title:             The Economist
     url:               /theeconomist/
-  - title:             Personal Projects
-    url:               /projects/
-  - title:             ReadAlready
-    url:               /readalready/
+  - title:             AlriteAlready!
+    url:               /alritealready/
 
 # Add links to the footer
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
 
 
 # This text will appear in a `<small>` tag in the footer of every page.
-copyright:             © 2020-2025. All rights reserved.
+copyright:             © 2020-%YEAR%. All rights reserved.  # %YEAR% = year of the latest build
 
 # Format of the permalinks
 permalink:             /readalready/:year-:month-:day-:title/
@@ -83,7 +81,7 @@ paginate_path:         /readalready/:num/
 # ----------------------------------------------------------------------------------------
  
 # Sidebar image and theme color of the site.
-accent_image:          /assets/img/sidebar-bg.jpg
+accent_image:          none
 accent_color:          rgb(79,177,186)
 
 # This is used for the `theme-color` meta tag,
@@ -93,18 +91,18 @@ theme_color:           rgb(8,46,57)
 
 # The string encoding which fonts to fetch from Google Fonts.
 # See: <https://hydejack.com/docs/configuration/>
-google_fonts:          Inter:400|Roboto+Slab:700|Noto+Sans:400,400i,700,700i
+# google_fonts: none — JetBrains Mono is self-hosted (assets/fonts, _includes/my-head.html)
 
 # The text font. Expects a string that is a valid CSS font-family value.
 # To change font-weight, see _sass/variables.scss
-font:                  Inter, Noto Sans, Helvetica, Arial, sans-serif
+font:                  '"JetBrains Mono", Consolas, Menlo, monospace'
 
 # The font used for headings. Expects a string that is a valid CSS font-family value.
 # To change font-weight, see _sass/variables.scss
-font_heading:          Inter, Noto Sans, Roboto Slab, Helvetica, Arial, sans-serif
+font_heading:          '"JetBrains Mono", Consolas, Menlo, monospace'
 
 # The font used for code blocks. Expects a string that is a valid CSS font-family value.
-font_code:             Fira Code, Menlo, Monaco, Consolas, monospace;
+font_code:             '"JetBrains Mono", Consolas, Menlo, monospace'
 
 defaults:
   # You can use this to provide a default accent color and background for
@@ -193,7 +191,7 @@ hydejack:
   no_push_state:       false
 
   # Set to `true` if you want to disable the drawer
-  no_drawer:           false
+  no_drawer:           true
 
   # Set to `true` if you don't to use the auto-hiding (JavaScript based) navbar.
   # Note that this will not hide the navbar completely, only replace it with a static one.
@@ -310,6 +308,7 @@ exclude:
   - .jekyll-cache
   - .sass-cache
   - vendor
+  - CLAUDE.md
   - Gemfile
   - Gemfile.lock
 include:

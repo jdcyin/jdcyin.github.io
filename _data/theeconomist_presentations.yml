@@ -1,0 +1,63 @@
+# Presentations & moderations shown on The Economist page, newest first.
+# Fields: title (required), date (YYYY-MM-DD; shown as "Mon YYYY"), event, hosts, location, role, url
+# Any missing field is simply left out of the line under the title.
+
+- title: Ending Violence Against Women and Girls Index
+  event: SVRI Forum 2026
+  hosts: UN Women and SVRI
+  location: Bangkok, Thailand
+  date: 2026-10-06
+  role: Speaker
+
+- title: Future of Health Asia 2026
+  location: Singapore
+  role: Moderator
+  date: 2026-10-01  # TODO: replace with the individual moderated sessions
+
+- title: "Realising health equity and co-creating a healthy Taiwan"
+  event: AmCham Event
+  location: Taipei, Taiwan
+  role: Panellist
+  date: 2025-11-01
+
+- title: "What's next for AI in Taiwan?: building a future-ready business"
+  event: Red Hat Private Event
+  location: Taipei, Taiwan
+  role: Speaker and moderator
+  date: 2025-11-01
+
+- title: "Regulatory frontiers: governing AI in health"
+  event: Future of Health Asia
+  location: Singapore
+  role: Moderator
+  date: 2025-10-01
+
+- title: "Climate action in healthcare: care for people and the planet"
+  event: Future of Health Asia
+  location: Singapore
+  role: Moderator
+  date: 2025-10-01
+
+- title: "Centering patient voices: understanding multidimensional access to healthcare"
+  event: Future of Health Asia
+  location: Singapore
+  role: Moderator
+  date: 2025-10-01
+
+- title: "Smarter diagnoses, better treatments: the AI-enabled care shift"
+  event: Future of Health Asia
+  location: Singapore
+  role: Moderator
+  date: 2025-10-01
+
+- title: "Asia's moment in the sun: climate tech comes of age"
+  event: Tech for Change
+  location: Hong Kong
+  role: Moderator
+  date: 2025-03-01
+
+- title: "Smart Ageing: The Role of Technology in Promoting Longevity"
+  event: Asia Health Innovation Summit
+  location: Hong Kong
+  role: Moderator
+  date: 2024-11-01

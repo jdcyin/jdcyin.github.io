@@ -1,0 +1,152 @@
+// Presentations list (Academia / The Economist pages)
+// Each entry: title | location (top row), date · event | role (bottom row)
+.presentations-head {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  h2 { margin-bottom: 0; }
+}
+
+.presentations-filter select {
+  font: inherit;
+  font-size: 0.8rem;
+  padding: 0.15rem 0.4rem;
+  color: inherit;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 2px;
+  cursor: pointer;
+
+  option { color: #000; }
+}
+
+.presentations {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.presentation {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 1.5rem;
+  row-gap: 0.25rem;
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--border-color);
+
+  &:last-child { border-bottom: 1px solid var(--border-color); }
+  &[hidden] { display: none; }
+}
+
+.presentation-title {
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.presentation-location,
+.presentation-role {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.presentation-location { align-self: start; }
+.presentation-role { align-self: end; }
+
+.presentation-meta,
+.presentation-location,
+.presentation-role {
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+// Narrow screens: stack everything on the left
+@media (max-width: 40em) {
+  .presentation { grid-template-columns: 1fr; }
+  .presentation-location,
+  .presentation-role { text-align: left; white-space: normal; }
+}
+
+// Email popup (opened from the sidebar email icon, see _includes/my-body.html)
+.email-dialog {
+  position: fixed;
+  max-width: calc(100vw - 2rem);
+  padding: 1.5rem 1.75rem 1.5rem;
+  border: 1px solid #c9a961;
+  border-radius: 2px;
+  background: #0b2a33;
+  color: #f2ead7;
+  box-shadow: 0 0 0 4px #0b2a33, 0 0 0 5px rgba(201, 169, 97, 0.5), 0 1rem 3rem rgba(0, 0, 0, 0.5);
+
+  &::backdrop { background: rgba(5, 18, 23, 0.6); }
+}
+
+.email-dialog-label {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c9a961;
+}
+
+.email-dialog-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.email-dialog-address {
+  font-size: 1.05rem;
+  user-select: all;
+}
+
+.email-dialog-copy {
+  padding: 0.3rem 0.8rem;
+  border: 1px solid #c9a961;
+  border-radius: 2px;
+  background: transparent;
+  color: #e6cf95;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+
+  &:hover, &:focus-visible { background: #c9a961; color: #0b2a33; }
+}
+
+.email-dialog-close {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.6rem;
+  border: 0;
+  background: none;
+  color: #c9a961;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+// Sidebar fret lights: individual 回 tiles that slowly light up and fade
+// out in random order (positions set by the script in _includes/my-body.html)
+.deco-lights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.deco-light {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background: url("/assets/img/deco-fret-light.svg") no-repeat;
+  background-size: 48px 48px;
+  filter: drop-shadow(0 0 3px rgba(232, 196, 120, 0.5));
+  opacity: 0;
+  transition: opacity 4s ease-in-out;
+
+  &.lit { opacity: 0.28; }
+}

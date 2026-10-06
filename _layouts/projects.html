@@ -32,3 +32,36 @@ layout: page
 
   {% if forloop.last %}</div>{% endif %}
 {% endfor %}
+
+{% assign presentations = site.data[page.presentations] %}
+{% if presentations and presentations.size > 0 %}
+  <div class="presentations-head">
+    <h2 id="panels-and-presentations">{{ page.presentations_title | default:"Panels & presentations" }}</h2>
+    <label class="presentations-filter">
+      <span class="sr-only">Show</span>
+      <select data-presentations-filter>
+        <option value="all">All</option>
+        <option value="moderator">Moderator</option>
+        <option value="speaker">Speaker</option>
+      </select>
+    </label>
+  </div>
+  <ul class="presentations">
+    {% for talk in presentations %}
+      {% assign role = talk.role | downcase %}
+      {% capture kinds %}{% if role contains "moderat" %}moderator {% endif %}{% if role contains "speaker" or role contains "panel" or role contains "present" %}speaker{% endif %}{% endcapture %}
+      {% assign meta = "" | split:"" %}
+      {% if talk.date %}{% assign d = talk.date | date:"%b %Y" %}{% assign meta = meta | push:d %}{% endif %}
+      {% if talk.event %}{% assign meta = meta | push:talk.event %}{% endif %}
+      {% if talk.hosts %}{% capture h %}with {{ talk.hosts }}{% endcapture %}{% assign meta = meta | push:h %}{% endif %}
+      <li class="presentation" data-kinds="{{ kinds | strip }}">
+        <span class="presentation-title">
+          {% if talk.url %}<a href="{{ talk.url }}">{{ talk.title }}</a>{% else %}{{ talk.title }}{% endif %}
+        </span>
+        <span class="presentation-location">{{ talk.location }}</span>
+        <span class="presentation-meta">{{ meta | join:" &middot; " }}</span>
+        <span class="presentation-role">{{ talk.role }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

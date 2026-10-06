@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- 1930s Shanghai deco lattice tile: a squared key-fret (回纹) spiral, with diamond studs where tiles meet -->
+  <g fill="none" stroke="#d4b46a" stroke-width="1.1" stroke-linecap="square">
+    <path d="M6 6 H42 V42 H12 V12 H36 V36 H18 V18 H30 V30 H24 V24"/>
+  </g>
+  <g fill="#d4b46a">
+    <path d="M0 -3 L3 0 L0 3 L-3 0 Z"/>
+    <path d="M48 -3 L51 0 L48 3 L45 0 Z"/>
+    <path d="M0 45 L3 48 L0 51 L-3 48 Z"/>
+    <path d="M48 45 L51 48 L48 51 L45 48 Z"/>
+  </g>
+</svg>

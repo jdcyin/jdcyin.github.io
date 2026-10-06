@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Just the key-fret spiral from deco-fret.svg, used for the sidebar lights -->
+  <path d="M6 6 H42 V42 H12 V12 H36 V36 H18 V18 H30 V30 H24 V24" fill="none" stroke="#e8c478" stroke-width="1.1" stroke-linecap="square"/>
+</svg>

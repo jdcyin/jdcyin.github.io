@@ -2,7 +2,8 @@
 <footer class="content" role="contentinfo">
   <hr/>
   {% if site.copyright.size > 0 %}
-    <p><small class="copyright">{{ site.copyright | markdownify | replace:'<p>','' | replace:'</p>','' }}</small></p>
+    {% assign build_year = site.time | date:'%Y' %}
+    <p><small class="copyright">{{ site.copyright | replace:'%YEAR%',build_year | markdownify | replace:'<p>','' | replace:'</p>','' }}</small></p>
   {% endif %}
   {% if site.legal.size > 0 %}
     <nav class="legal"><small>

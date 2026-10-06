@@ -1,2 +1,81 @@
 // Uncomment to disable dingbat icons below posts
 // hr.dingbat { display: none }
+
+// Sidebar background: 1930s Shanghai art deco. A gold key-fret (回纹)
+// lattice on deep jade, plus one soft glow that stays put behind the
+// portrait and slowly brightens and dims.
+.sidebar { overflow: hidden; }
+
+.sidebar-bg {
+  background-color: #0b2a33;
+  // fixed vignette (top and bottom) so text stays readable
+  background-image: linear-gradient(to bottom, #051217 0%, #0b2a33 45%, #051217 100%);
+  overflow: hidden;
+
+  // static fret lattice
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("/assets/img/deco-fret.svg") repeat 0 0;
+    background-size: 48px 48px;
+    opacity: 0.16;
+  }
+
+  // the glow, fixed behind the portrait (the bg box is centred on the
+  // sidebar, so 50% = the middle of the visible column)
+  &::after,
+  &.sidebar-overlay::after {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle 12rem at 50% 38%, rgba(232, 196, 120, 0.24), rgba(232, 196, 120, 0.07) 50%, transparent 72%);
+  }
+}
+
+@keyframes deco-breathe {
+  from { opacity: 0.6; }
+  to   { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sidebar-bg::after {
+    animation: deco-breathe 7s ease-in-out infinite alternate;
+  }
+}
+
+// Static sidebar (no_drawer: true). No menu button anywhere; on narrow
+// screens the sidebar becomes a compact header above the page content.
+#_menu { display: none !important; }
+
+@media screen and (max-width: 63.99em) {
+  #_pushState {
+    display: flex;
+    flex-direction: column;
+  }
+  hy-drawer { order: -1; }
+  .sidebar { min-height: 0; }
+  .sidebar-sticky { padding: 2rem 1.5rem 1.25rem; }
+  .sidebar .avatar { width: 80px; height: 80px; }
+}
+
+// Sidebar name: bold, a little bigger than the nav links (.f4 = 1.08rem),
+// with breathing room before the links
+.sidebar-title .h1 {
+  font-size: calc(1.08rem + 5px);
+  font-weight: 700;
+  margin-top: 0.75rem;
+}
+
+.sidebar-about { margin-bottom: 2rem; }
+
+// ALRITE ALREADY! title links out to alritealready.com
+.page-title a {
+  color: inherit;
+  border-bottom: none;
+  text-decoration: none;
+}
