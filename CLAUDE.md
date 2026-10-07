@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Personal website for Jason D.C. Yin (jasonyin.com). Jekyll 3 site on the Hydejack theme, deployed via Netlify (`netlify.toml`) from `master`.
+Personal website for Jason D.C. Yin (jasonyin.com). Jekyll 3 site on the Hydejack theme, deployed by GitHub Pages from `master` of `jdcyin/jdcyin.github.io` (`netlify.toml` is unused).
 
 ## Working rules
 
@@ -49,11 +49,11 @@ Add an entry to `_data/academia_presentations.yml` or `_data/theeconomist_presen
 ## Typography / styling
 
 - Font: **JetBrains Mono** everywhere (body, headings, code), matching the footer text on pablogguz.github.io. **Self-hosted** in `assets/fonts/` with `@font-face` in `_includes/my-head.html` (no Google Fonts), so it never falls back to another font. Earlier tries: Inter (original), Newsreader serif.
-- Sidebar is **static** (`no_drawer: true`, no menu button). On narrow screens it becomes a compact header above the content (CSS in `_sass/my-inline.scss`). Sidebar name is 2px bigger than the nav links.
+- Sidebar is **static** (`no_drawer: true`, no menu button). On narrow screens it becomes a compact header above the content (CSS in `_sass/my-inline.scss`). Sidebar width is 16rem (`sidebar_width` in `_data/variables.yml`) and stays fixed on wide screens. On phones it is a thin banner pinned to the top while scrolling (fixed, 5.25rem tall; `#_main` is padded to match): full-height photo on the left, name with email/LinkedIn icons beside it (left-aligned, vertically centered), the three links stacked on the right (pablogguz.github.io style).
 - Footer copyright: `copyright` in `_config.yml` uses a `%YEAR%` token that `_includes/body/footer.html` replaces with the build year, so it updates on every deploy.
-- Sidebar social icons: email (opens a centered popup with a Copy button, `_includes/my-body.html`) and LinkedIn (new tab), set under `author1.social` in `_data/authors.yml`.
+- Sidebar social icons: email (opens a centered popup with a Copy button; markup in `_includes/my-body.html`) and LinkedIn (new tab), set under `author1.social` in `_data/authors.yml`.
 - No sidebar tagline (`tagline` is commented out in `_config.yml`; `_includes/body/sidebar-sticky.html` no longer falls back to the site description).
-- Sidebar background is art deco, not a photo (`accent_image: none`): gold `assets/img/deco-fret.svg` (Shanghai deco key-fret lattice) on deep jade, with one stationary glow behind the portrait that slowly brightens and dims. A script in `_includes/my-body.html` also lights individual 回 tiles (`assets/img/deco-fret-light.svg`) one at a time in random order, so every tile gets a turn per round. The pattern sits at `background-position: 0 0` so the lights line up; keep the two in sync. Defined in `_sass/my-inline.scss`; static for reduced-motion users.
+- Sidebar background is art deco, not a photo (`accent_image: none`): gold `assets/img/deco-fret.svg` (Shanghai deco key-fret lattice) on deep jade, with one stationary glow behind the portrait that slowly brightens and dims. A script in `assets/js/site-extras.js` also lights individual 回 tiles (`assets/img/deco-fret-light.svg`) one at a time in random order, so every tile gets a turn per round. The pattern sits at `background-position: 0 0` so the lights line up; keep the two in sync. Defined in `_sass/my-inline.scss`; static for reduced-motion users.
 - Custom CSS overrides go in `_sass/my-inline.scss` (above-the-fold, inlined) and `_sass/my-style.scss`. Avoid editing theme files in `_sass/hydejack`, `_sass/pooleparty`, `_includes`, `_layouts` unless needed.
 - `#jekyll-theme-hydejack/` is a vendored copy of the theme — reference only, not used in the build.
 
@@ -68,3 +68,9 @@ bundle exec jekyll serve --livereload   # http://localhost:4000
 ```
 
 Restarting the server: stopping the shell does **not** always kill Jekyll's `ruby.exe` children on Windows. Orphaned servers keep regenerating into the same `_site` with stale config and produce mixed-up pages. Before restarting, kill every `ruby.exe` running `jekyll serve` (and `_config.yml` changes always need a restart).
+
+**Always check JavaScript in a production build.** GitHub Pages builds with `JEKYLL_ENV=production`, where the `compress` layout squeezes every page onto a few lines (and strips `</body>`). A `//` comment inside an inline `<script>` then comments out everything after it. Keep site JS in `assets/js/site-extras.js` (not inline). To preview exactly what goes live:
+
+```bash
+PAGES_REPO_NWO=jdcyin/jdcyin.github.io JEKYLL_ENV=production bundle exec jekyll serve
+```

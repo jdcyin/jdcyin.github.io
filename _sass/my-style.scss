@@ -115,10 +115,13 @@
   &:hover, &:focus-visible { background: #c9a961; color: #0b2a33; }
 }
 
+.email-dialog-close-form { margin: 0; }
+
 .email-dialog-close {
   position: absolute;
-  top: 0.35rem;
-  right: 0.6rem;
+  top: 0.1rem;
+  right: 0.2rem;
+  padding: 0.3rem 0.5rem;
   border: 0;
   background: none;
   color: #c9a961;

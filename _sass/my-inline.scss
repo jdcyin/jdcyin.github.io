@@ -48,19 +48,14 @@
   }
 }
 
-// Static sidebar (no_drawer: true). No menu button anywhere; on narrow
-// screens the sidebar becomes a compact header above the page content.
+// Static sidebar (no_drawer: true), no menu button anywhere.
 #_menu { display: none !important; }
 
-@media screen and (max-width: 63.99em) {
-  #_pushState {
-    display: flex;
-    flex-direction: column;
-  }
-  hy-drawer { order: -1; }
-  .sidebar { min-height: 0; }
-  .sidebar-sticky { padding: 2rem 1.5rem 1.25rem; }
-  .sidebar .avatar { width: 80px; height: 80px; }
+// Keep the sidebar at its fixed width on wide screens too (the theme
+// otherwise grows it to fill half the leftover space).
+@media screen and (min-width: $break-point-dynamic) {
+  html hy-drawer,
+  html body::before { width: $sidebar-width; }
 }
 
 // Sidebar name: bold, a little bigger than the nav links (.f4 = 1.08rem),
@@ -78,4 +73,99 @@
   color: inherit;
   border-bottom: none;
   text-decoration: none;
+}
+
+// Narrow screens: the sidebar becomes a thin banner above the content
+// (in the style of pablogguz.github.io): photo + name, with the email and
+// LinkedIn icons underneath, on the left; the three links stacked on the right.
+@media screen and (max-width: 63.99em) {
+  #_pushState {
+    display: flex;
+    flex-direction: column;
+  }
+  // banner is pinned to the top (fixed, set height); the page starts below it
+  hy-drawer {
+    order: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5.25rem;
+  }
+  #_navbar { display: none; }
+  #_main { padding-top: 5.25rem + 2rem; }
+
+  .sidebar {
+    min-height: 0;
+    height: 100%;
+    display: block;
+    text-align: left;
+  }
+
+  .sidebar-sticky {
+    max-width: none;
+    height: 100%;
+    padding: 0 1rem;
+    align-content: center;
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    grid-template-areas: "pic name nav" "pic social nav";
+    align-items: center;
+    column-gap: 0.75rem;
+  }
+  
+  // let the photo and the name sit directly in the banner grid
+  .sidebar-about {
+    display: contents;
+  
+    > a.no-hover { grid-area: pic; line-height: 0; }
+  
+    .avatar {
+      width: 56px;
+      height: 56px;
+      margin: 0;
+    }
+  
+    > a.sidebar-title {
+      grid-area: name;
+      align-self: end;
+      justify-self: start;
+      &::after { display: none; }
+      > .h1 {
+        font-size: 1rem;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+  
+  .sidebar-social {
+    grid-area: social;
+    align-self: start;
+    justify-self: start;
+  
+    > ul > li > a {
+      font-size: 0.95rem;
+      width: auto;
+      margin-right: 0.7rem;
+      height: auto;
+      padding: 0;
+      line-height: 1.6;
+      border-bottom: 0;
+    }
+  }
+  
+  .sidebar-nav {
+    grid-area: nav;
+    justify-self: end;
+    text-align: right;
+
+    > ul { margin: 0; }
+    li { line-height: 1.5; }
+  }
+
+  .sidebar-nav-item {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+  }
 }
