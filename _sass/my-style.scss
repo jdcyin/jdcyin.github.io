@@ -132,29 +132,6 @@
   cursor: pointer;
 }
 
-// Sidebar fret lights: individual 回 tiles that slowly light up and fade
-// out in random order (positions set by the script in _includes/my-body.html)
-.deco-lights {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-}
-
-.deco-light {
-  position: absolute;
-  width: 48px;
-  height: 48px;
-  background: url("/assets/img/deco-fret-light.svg") no-repeat;
-  background-size: 48px 48px;
-  filter: drop-shadow(0 0 3px rgba(232, 196, 120, 0.5));
-  opacity: 0;
-  transition: opacity 4s ease-in-out;
-
-  &.lit { opacity: 0.28; }
-}
 
 // Session popup (click a presentation title that has a description)
 .talk-dialog {

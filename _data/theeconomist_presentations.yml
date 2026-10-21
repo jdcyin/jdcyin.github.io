@@ -52,7 +52,7 @@
   location: "Taipei, Taiwan"
   role: "Speaker"
   date: 2025-11-01
-  description: "Health equity in Taiwan, seen through the treatment of irritable bowel syndrome and Crohn’s disease."
+  description: "Getting to universal health coverage in Taiwan by not overlooking lesser-known conditions, such as irritable bowel syndrome and Crohn’s disease."
 
 - title: "Regulatory frontiers: governing AI in health"
   event: "Future of Health Asia"
@@ -95,8 +95,16 @@
   description_full: "The target of net-zero emissions is a focus for governments and major companies. To achieve it, sustainability will need to be “baked in” to the technologies that power business activities. This session is a chance to interact with innovations in climate technology and discuss the latest trends in Asia and beyond. How can companies improve their bottom line while harnessing technologies to reduce their carbon footprint? Can technology make carbon credits and markets work smoothly? How can AI transform research on climate and waste reduction, and promote a thriving circular economy? Or, is the enthusiasm for AI diverting investment away from climate action? How can firms balance priorities for environmental conservation and financial returns? Where more could the government do to push the adoption of green tech?"
 
 - title: "Smart Ageing: The Role of Technology in Promoting Longevity"
-  event: "Asia Health Innovation Summit"
+  event: "Asia Health Innovation Summit 2024"
   location: "Hong Kong"
   role: "Moderator"
   date: 2024-11-01
   description: "How technology can help people across Asia live longer, healthier lives."
+
+- title: "Medtech on the edge"
+  event: "Asia Health Innovation Summit 2024"
+  location: "Hong Kong"
+  role: "Moderator"
+  date: 2024-10-01
+  description: "Where smart capital is flowing in medtech, what founders need to scale up, and how regulation is shaping who wins and who loses."
+  description_full: "From artificial intelligence-driven diagnostics to robotic surgery, the medical technology (“medtech”) sector is reshaping the future of healthcare. Behind the breakthroughs are strategic investments, regulatory challenges and changing global priorities. This session highlights where smart capital is going, what founders must do to scale up startups, whether innovation is outpacing investor patience and how regulatory frameworks are increasingly determining who wins and who loses."

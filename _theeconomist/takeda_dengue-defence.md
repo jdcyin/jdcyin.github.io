@@ -1,7 +1,7 @@
 ---
 layout: project
 title: 'Dengue defence' 
-caption: prioritising actionable strategies for prevention
+caption: Prioritising actionable strategies for prevention
 description: >
 date: 13 Jun 2025
 image: /assets/img/theeconomist/takeda_dengue-defence.jpg

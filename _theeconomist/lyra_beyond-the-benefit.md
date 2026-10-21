@@ -11,4 +11,4 @@ links:
 sitemap: false
 ---
 
-<p>Beyond the benefit is an Economist Enterprise report, supported by Lyra Health, that puts a figure on the business cost of poor mental health and workplace stress in the US. Drawing on an evidence review, a survey of 204 CFOs at large American organisations, expert interviews and a bespoke economic model, it shows where those costs fall, where employers can do most to reduce them and how they can better focus, measure and adapt their response.</p>
+<p>What is the cost of poor mental health and workplace stress in the United States? Drawing on an evidence review, a survey of 204 CFOs, expert interviews and an economic model, we explore this question. We also look at how employers can reduce these costs.</p>

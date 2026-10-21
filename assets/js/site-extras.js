@@ -102,6 +102,8 @@ function clickedOutside(dialog, e) {
   }
 
   build();
+  // re-measure once fonts, images and the async stylesheet have loaded
+  window.addEventListener('load', build);
   setInterval(next, EVERY);
   var resizeTimer;
   window.addEventListener('resize', function () {

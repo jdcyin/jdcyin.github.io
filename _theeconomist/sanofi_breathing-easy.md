@@ -1,7 +1,7 @@
 ---
 layout: project
 title: 'Breathing easy' 
-caption: prioritising respiratory health for older adults in Asia Pacific
+caption: Prioritising respiratory health for older adults in Asia Pacific
 description: >
 date: 26 Mar 2026
 image: /assets/img/theeconomist/sanofi_breathing-easy.jpg

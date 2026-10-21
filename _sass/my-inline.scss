@@ -48,6 +48,31 @@
   }
 }
 
+// Sidebar fret lights (kept in the inlined CSS so the tiles start invisible;
+// when this lived in the async stylesheet they all flashed on at page load): individual 回 tiles that slowly light up and fade
+// out in random order (positions set by the script in _includes/my-body.html)
+.deco-lights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.deco-light {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background: url("/assets/img/deco-fret-light.svg") no-repeat;
+  background-size: 48px 48px;
+  filter: drop-shadow(0 0 3px rgba(232, 196, 120, 0.5));
+  opacity: 0;
+  transition: opacity 4s ease-in-out;
+
+  &.lit { opacity: 0.28; }
+}
+
 // Static sidebar (no_drawer: true), no menu button anywhere.
 #_menu { display: none !important; }
 
@@ -174,3 +199,26 @@
     margin-bottom: 0;
   }
 }
+
+// Section headings on the tile pages (Publications, Presentations &
+// moderations, Research projects): bold, gold, with a short deco rule.
+.layout-projects h2 {
+  font-weight: 700;
+  color: #e6cf95;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 3rem;
+    margin-top: 0.4rem;
+    border-bottom: 2px solid #c9a961;
+  }
+}
+
+// No "#" permalink next to headings
+.permalink { display: none !important; }
+
+// The theme's reboot CSS sets `dialog { display: block }`, which made the
+// closed email/session popups render just below the footer (a thin gold line
+// at the bottom of every page). Keep closed dialogs hidden.
+dialog:not([open]) { display: none !important; }
