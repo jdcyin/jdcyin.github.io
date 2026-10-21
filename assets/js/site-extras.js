@@ -148,3 +148,42 @@ document.addEventListener('change', function (e) {
     if (clickedOutside(dialog, e)) dialog.close();
   });
 })();
+
+// Scrollytelling articles: as each .scrolly-step reaches the middle of the
+// screen, show the visual named by its data-viz and update the section label.
+// Pages are swapped in without a full reload, so re-run after each navigation.
+(function () {
+  function setup(root) {
+    if (root.getAttribute('data-ready')) return;
+    root.setAttribute('data-ready', '1');
+    var steps = root.querySelectorAll('.scrolly-step');
+    var vizzes = root.querySelectorAll('.viz');
+    var label = root.querySelector('.scrolly-section-label');
+
+    function activate(step) {
+      var key = step.getAttribute('data-viz');
+      Array.prototype.forEach.call(steps, function (s) { s.classList.toggle('is-active', s === step); });
+      Array.prototype.forEach.call(vizzes, function (v) { v.classList.toggle('is-active', v.getAttribute('data-viz') === key); });
+      if (label) label.textContent = step.getAttribute('data-section') || '';
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      // very old browsers: show every visual's first state
+      if (steps.length) activate(steps[0]);
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { if (entry.isIntersecting) activate(entry.target); });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    Array.prototype.forEach.call(steps, function (s) { observer.observe(s); });
+    if (steps.length) activate(steps[0]);
+  }
+
+  function init() {
+    Array.prototype.forEach.call(document.querySelectorAll('.scrolly'), setup);
+  }
+
+  init();
+  var pushState = document.getElementById('_pushState');
+  if (pushState) pushState.addEventListener('hy-push-state-after', init);
+})();
