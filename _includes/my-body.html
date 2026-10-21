@@ -51,4 +51,10 @@ Example code for using Matamo as alternative analytics solution.
     <button type="button" class="email-dialog-copy" data-email-copy autofocus>Copy</button>
   </div>
 </dialog>
+<dialog id="_talkDialog" class="email-dialog talk-dialog" aria-labelledby="_talkDialogTitle">
+  <form method="dialog" class="email-dialog-close-form"><button type="submit" class="email-dialog-close" aria-label="Close">&times;</button></form>
+  <p class="email-dialog-label">Session</p>
+  <h3 id="_talkDialogTitle" class="talk-dialog-title" tabindex="-1" autofocus></h3>
+  <div class="talk-dialog-body"></div>
+</dialog>
 <script src="{{ '/assets/js/site-extras.js' | relative_url }}" defer></script>

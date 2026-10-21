@@ -71,6 +71,8 @@
 // Email popup (opened from the sidebar email icon, see _includes/my-body.html)
 .email-dialog {
   position: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   max-width: calc(100vw - 2rem);
   padding: 1.5rem 1.75rem 1.5rem;
   border: 1px solid #c9a961;
@@ -152,4 +154,40 @@
   transition: opacity 4s ease-in-out;
 
   &.lit { opacity: 0.28; }
+}
+
+// Session popup (click a presentation title that has a description)
+.talk-dialog {
+  width: 36rem;
+  padding-right: 2.5rem;
+}
+
+.talk-dialog-title {
+  outline: none;
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: #f2ead7;
+}
+
+.talk-dialog-body p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #d6d0c0;
+  line-height: 1.65;
+}
+
+// Presentation titles that open a popup look like links
+.presentation-open {
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid rgba(201, 169, 97, 0.6);
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+
+  &:hover, &:focus-visible { border-bottom-color: #c9a961; color: #e6cf95; }
 }

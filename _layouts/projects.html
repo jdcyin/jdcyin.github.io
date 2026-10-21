@@ -56,11 +56,14 @@ layout: page
       {% if talk.hosts %}{% capture h %}with {{ talk.hosts }}{% endcapture %}{% assign meta = meta | push:h %}{% endif %}
       <li class="presentation" data-kinds="{{ kinds | strip }}">
         <span class="presentation-title">
-          {% if talk.url %}<a href="{{ talk.url }}">{{ talk.title }}</a>{% else %}{{ talk.title }}{% endif %}
+          {% if talk.description %}<button type="button" class="presentation-open" data-presentation-open>{{ talk.title }}</button>{% elsif talk.url %}<a href="{{ talk.url }}" target="_blank" rel="noopener">{{ talk.title }}</a>{% else %}{{ talk.title }}{% endif %}
         </span>
         <span class="presentation-location">{{ talk.location }}</span>
         <span class="presentation-meta">{{ meta | join:" &middot; " }}</span>
         <span class="presentation-role">{{ talk.role }}</span>
+        {% if talk.description %}
+          <div class="presentation-detail" hidden>{{ talk.description | markdownify }}</div>
+        {% endif %}
       </li>
     {% endfor %}
   </ul>

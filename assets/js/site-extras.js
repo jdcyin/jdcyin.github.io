@@ -2,6 +2,13 @@
 // Kept in a separate file because the production build minifies inline HTML
 // onto one line, which breaks // comments inside inline <script> tags.
 
+// True when a click landed outside the dialog box (on the backdrop).
+function clickedOutside(dialog, e) {
+  if (e.target !== dialog) return false;
+  var r = dialog.getBoundingClientRect();
+  return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
+}
+
 (function () {
   var dialog = document.getElementById('_emailDialog');
   if (!dialog || typeof dialog.showModal !== 'function') return;
@@ -19,7 +26,7 @@
 
   dialog.addEventListener('click', function (e) {
     // close on the x button or on a click outside the box
-    if (e.target === dialog || e.target.closest('[data-email-close]')) dialog.close();
+    if (clickedOutside(dialog, e) || e.target.closest('[data-email-close]')) dialog.close();
   });
 
   copyBtn.addEventListener('click', function () {
@@ -114,3 +121,28 @@ document.addEventListener('change', function (e) {
     li.hidden = kind !== 'all' && kinds.indexOf(kind) === -1;
   });
 });
+
+// Session popup: clicking a presentation title that has a description opens
+// it in a dialog (content comes from the hidden .presentation-detail block).
+(function () {
+  var dialog = document.getElementById('_talkDialog');
+  if (!dialog || typeof dialog.showModal !== 'function') return;
+  var titleEl = dialog.querySelector('.talk-dialog-title');
+  var bodyEl = dialog.querySelector('.talk-dialog-body');
+
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest && e.target.closest('[data-presentation-open]');
+    if (!btn) return;
+    var item = btn.closest('.presentation');
+    var detail = item && item.querySelector('.presentation-detail');
+    if (!detail) return;
+    titleEl.textContent = btn.textContent.trim();
+    bodyEl.innerHTML = detail.innerHTML;
+    dialog.showModal();
+  });
+
+  dialog.addEventListener('click', function (e) {
+    // close on a click outside the box
+    if (clickedOutside(dialog, e)) dialog.close();
+  });
+})();

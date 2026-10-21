@@ -44,7 +44,7 @@ Body text shown on the project page.
 
 ### Adding a presentation (Academia or The Economist)
 
-Add an entry to `_data/academia_presentations.yml` or `_data/theeconomist_presentations.yml` (newest first; a page hides the section while its list is empty): `title`, plus any of `date`, `event`, `hosts`, `location`, `role`, `url`; missing fields are just left out. Layout: title | location on top, date · event · with hosts | role underneath. The heading has an All / Moderator / Speaker filter driven by `role` (panellist, speaker and presenter count as Speaker).
+Add an entry to `_data/academia_presentations.yml` or `_data/theeconomist_presentations.yml` (newest first; a page hides the section while its list is empty): `title`, plus any of `date`, `event`, `hosts`, `location`, `role`, `url`, `description`; missing fields are just left out. With a `description`, the title becomes clickable and opens a popup (`#_talkDialog` in `_includes/my-body.html`, script in `assets/js/site-extras.js`) showing the title and description. Keep `description` to one short sentence (Jason prefers brief); the original agenda text can go in `description_full`, which is kept for reference and not shown. Wrap descriptions in double quotes and escape any inner `"`. Layout: title | location on top, date · event · with hosts | role underneath. The heading has an All / Moderator / Speaker filter driven by `role` (panellist, speaker and presenter count as Speaker).
 
 ## Typography / styling
 

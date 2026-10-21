@@ -1,63 +1,102 @@
 # Presentations & moderations shown on The Economist page, newest first.
-# Fields: title (required), date (YYYY-MM-DD; shown as "Mon YYYY"), event, hosts, location, role, url
-# Any missing field is simply left out of the line under the title.
+# Fields: title (required), date (YYYY-MM-DD; shown as "Mon YYYY"), event, hosts,
+# location, role, url, description (one sentence; clicking the title opens it in a popup),
+# description_full (original agenda text, for reference only, not shown on the site).
+# Any missing field is simply left out.
 
-- title: Ending Violence Against Women and Girls Index
-  event: SVRI Forum 2026
-  hosts: UN Women and SVRI
-  location: Bangkok, Thailand
+- title: "Ending Violence Against Women and Girls Index"
+  event: "SVRI Forum 2026"
+  hosts: "UN Women and SVRI"
+  location: "Bangkok, Thailand"
+  role: "Speaker"
   date: 2026-10-06
-  role: Speaker
+  description: "Presenting the Ending Violence Against Women and Girls Index."
 
-- title: Future of Health Asia 2026
-  location: Singapore
-  role: Moderator
-  date: 2026-10-01  # TODO: replace with the individual moderated sessions
+- title: "AI in health: from promise to proof"
+  event: "Future of Health Asia 2026"
+  location: "Singapore"
+  role: "Moderator"
+  date: 2026-09-29
+  url: https://events.economistenterprise.com/future-of-health-asia/agenda/
+  description: "Where AI in healthcare is delivering real clinical value, where it falls short, and how governance and regulation can build the trust needed to scale it."
+  description_full: "Artificial intelligence (AI) is increasingly used in the health sector yet whereas some applications slot easily into existing systems, improving diagnostics and workflows, others struggle to scale beyond initial trials or fail to provide clinical value. This panel explores where AI is effective today and where it falls far short. What makes for a successful AI implementation that integrates safely into clinical workflows for measurable impact? How can concerns around data governance and sovereignty be resolved to generate the trust that will encourage larger-scale use of AI tools? And what role does regulation play in enabling—or blocking—AI-based innovation in healthcare?"
 
-- title: "Realising health equity and co-creating a healthy Taiwan"
-  event: AmCham
-  location: Taipei, Taiwan
-  role: Speaker
-  date: 2025-11-01
+- title: "Care that fits: what works with patients’ lives"
+  event: "Future of Health Asia 2026"
+  location: "Singapore"
+  role: "Moderator"
+  date: 2026-09-29
+  url: https://events.economistenterprise.com/future-of-health-asia/agenda/
+  description: "How to make healthcare simpler, closer to home and designed around patients’ lives, with patients as active partners in their care."
+  description_full: "Many people find healthcare expensive and hard to navigate. This session explores what gets in the way of providing care that is easy to understand, close to home and designed around peoples’ lives. Do patients get lost in the system and why? What can insurers, providers and governments do to simplify care without lowering standards or raising costs? How can health technology assessment go beyond clinical outcomes and cost-effectiveness to incorporate self-reported outcomes and real-world experience that reflect what patients really value? And how can patients become active partners in their care, rather than just passive recipients?"
+
+- title: "Diagnostics first: scaling up the infrastructure"
+  event: "Future of Health Asia 2026"
+  location: "Singapore"
+  role: "Moderator"
+  date: 2026-09-29
+  url: https://events.economistenterprise.com/future-of-health-asia/agenda/
+  description: "Treating diagnostics as essential infrastructure: how to expand testing at scale and move towards precision medicine without widening gaps in access."
+  description_full: "Diagnostics are essential for effective healthcare, yet access remains uneven in many markets, particularly low- and middle-income countries. Expanding testing capacity requires more than technology; it demands co-ordination between the public and private sectors, as well as investment and policy support. This session frames diagnostics as essential infrastructure, and examines how to fill the gaps. How can countries expand testing on a large scale? How can AI improve speed and accuracy? And how can systems move from basic screening to precision medicine without widening gaps in access?"
 
 - title: "What's next for AI in Taiwan?: building a future-ready business"
-  event: Red Hat Private Event
-  location: Taipei, Taiwan
-  role: Speaker and moderator
+  event: "Red Hat Executive Exchange"
+  location: "Taipei, Taiwan"
+  role: "Speaker and moderator"
+  date: 2025-11-06
+  description: "What it takes for businesses in Taiwan to become AI future-ready, from resilient strategy and responsible governance to the culture needed to embed AI."
+  description_full: "As artificial intelligence moves from pilots to the core of business, what does it now mean for a company in Taiwan to be “AI future-ready”? This invitation-only panel, held at Red Hat’s Executive Exchange, explores how firms can build AI strategies that withstand both market shifts and geopolitical friction, and which industries and use cases in Taiwan are leading the charge. Can AI investments deliver lasting value to employees, customers and shareholders, or does the hype call for a more measured approach? How should executives weigh speed and cost against responsible AI, data sovereignty and regulatory expectations? And what cultural shifts and leadership mindsets are needed to embed AI across the enterprise, rather than treating it as a series of experiments?"
+
+- title: "Realising health equity and co-creating a healthy Taiwan"
+  event: "AmCham"
+  location: "Taipei, Taiwan"
+  role: "Speaker"
   date: 2025-11-01
+  description: "Health equity in Taiwan, seen through the treatment of irritable bowel syndrome and Crohn’s disease."
 
 - title: "Regulatory frontiers: governing AI in health"
-  event: Future of Health Asia
-  location: Singapore
-  role: Moderator
+  event: "Future of Health Asia"
+  location: "Singapore"
+  role: "Moderator"
   date: 2025-10-01
+  description: "How regulators can govern AI in medicine without compromising patient safety, accountability or ethics, and what best practice looks like for Asia."
+  description_full: "As AI changes diagnostics, therapies and decision-making in healthcare, regulators must encourage innovation without compromising patient safety, data integrity or ethical standards. This session examines the emerging frameworks, uncertainties and global tensions around governing AI in medicine. From questions of accountability and bias to the pace of regulatory adaptation, it will consider whether laws can keep up with innovation. Are healthcare systems ready to trust AI with life-or-death decisions, or will regulatory caution delay adoption? What are the legal and ethical risks if AI-enabled tools misdiagnose, and who should bear responsibility? What are the global best practices, and how can they be adapted in the context of Asian economies?"
 
 - title: "Climate action in healthcare: care for people and the planet"
-  event: Future of Health Asia
-  location: Singapore
-  role: Moderator
+  event: "Future of Health Asia"
+  location: "Singapore"
+  role: "Moderator"
   date: 2025-10-01
+  description: "Why climate action must become a healthcare priority, and how to build greener, more resilient health systems."
+  description_full: "Climate change is a crisis for the planet—and for human health. Yet the healthcare sector is not only on the frontlines of the response (such as for respiratory and heat-related illnesses) but also a contributor to environmental damage (from inefficient supply chains and care facilities). This session examines why climate action must become a healthcare priority and explores strategies for building greener, more resilient systems. What responsibility do insurers and healthcare payers have in promoting sustainability? Can the push for green healthcare coexist with profit and growth?"
 
 - title: "Centering patient voices: understanding multidimensional access to healthcare"
-  event: Future of Health Asia
-  location: Singapore
-  role: Moderator
+  event: "Future of Health Asia"
+  location: "Singapore"
+  role: "Moderator"
   date: 2025-10-01
+  description: "The barriers patients across Asia face in getting the right care at the right time, place and price, and how insurers and payers can help."
+  description_full: "Access to healthcare is influenced by more than just proximity or cost. It involves a complex mix of system design, social context and lived experience. This panel brings together regional experts from across Asia to unpack the realities of healthcare access and identify the pain points patients face—an essential first step towards designing more connected care. What barriers do patients face on the path to the right care at the right time, place and price? How do patient experiences shape their trust in healthcare systems? How can insurers and payers better support health access across income and age groups?"
 
 - title: "Smarter diagnoses, better treatments: the AI-enabled care shift"
-  event: Future of Health Asia
-  location: Singapore
-  role: Moderator
+  event: "Future of Health Asia"
+  location: "Singapore"
+  role: "Moderator"
   date: 2025-10-01
+  description: "Where AI is genuinely transforming diagnosis and treatment, and the risks of bias and regulatory hurdles that still stand in the way."
+  description_full: "From early cancer detection to personalised treatment plans, AI promises to revolutionise diagnostics and therapies. Healthcare systems are racing to adopt the technology. But the gap between potential and practice remains wide. This session looks beyond the headlines to explore where AI is truly transforming patient care, where it is falling short, and what risks and regulatory hurdles still stand in the way. How to ensure AI does not replicate biases in clinical decision-making, especially for underserved populations? Will the latest wave of AI tools enhance clinicians—or make them obsolete?"
 
 - title: "Asia's moment in the sun: climate tech comes of age"
-  event: Tech for Change
-  location: Hong Kong
-  role: Moderator
+  event: "Tech for Change"
+  location: "Hong Kong"
+  role: "Moderator"
   date: 2025-03-01
+  description: "How companies in Asia can harness climate technology to cut emissions while protecting their bottom line."
+  description_full: "The target of net-zero emissions is a focus for governments and major companies. To achieve it, sustainability will need to be “baked in” to the technologies that power business activities. This session is a chance to interact with innovations in climate technology and discuss the latest trends in Asia and beyond. How can companies improve their bottom line while harnessing technologies to reduce their carbon footprint? Can technology make carbon credits and markets work smoothly? How can AI transform research on climate and waste reduction, and promote a thriving circular economy? Or, is the enthusiasm for AI diverting investment away from climate action? How can firms balance priorities for environmental conservation and financial returns? Where more could the government do to push the adoption of green tech?"
 
 - title: "Smart Ageing: The Role of Technology in Promoting Longevity"
-  event: Asia Health Innovation Summit
-  location: Hong Kong
-  role: Moderator
+  event: "Asia Health Innovation Summit"
+  location: "Hong Kong"
+  role: "Moderator"
   date: 2024-11-01
+  description: "How technology can help people across Asia live longer, healthier lives."
