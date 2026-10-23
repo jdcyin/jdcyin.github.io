@@ -347,16 +347,12 @@ dialog:not([open]) { display: none !important; }
     min-height: 95vh;
     opacity: 1;
     justify-content: flex-end;
-    padding-bottom: 0;
+    padding-bottom: 10.5vh;
   }
   .scrolly-step:first-child { min-height: 80vh; }
   .scrolly-step:last-child { margin-bottom: 15vh; min-height: 95vh; }
 
-  // each card docks at one fixed spot (the bottom of the panel) while its step
-  // scrolls past, then moves on: sticky within its own step
   .scrolly-card {
-    position: sticky;
-    bottom: calc(10vh + 1.25rem);
     width: unquote("min(clamp(50rem, 30rem + 25vw, 66rem), calc(100% - 3rem))");
     margin-left: 1.5rem;
     padding: 1rem 1.4rem;
@@ -367,15 +363,47 @@ dialog:not([open]) { display: none !important; }
     background: rgba(7, 28, 34, 0.95);
     border: 1px solid rgba(201, 169, 97, 0.55);
     box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.45);
-    opacity: 0;
-    transition: opacity 0.35s ease;
+    opacity: 0.35;
+    transition: opacity 0.4s ease;
 
     .scrolly-kicker { grid-column: 1; }
     h3 { grid-column: 1; margin-bottom: 0; font-size: unquote("clamp(1.15rem, 0.75rem + 0.55vw, 1.6rem)"); }
     p { grid-column: 2; grid-row: 1 / span 3; margin: 0 0 0.5rem; font-size: unquote("clamp(0.9rem, 0.55rem + 0.42vw, 1.2rem)"); line-height: 1.6; }
     .scrolly-kicker { font-size: unquote("clamp(0.7rem, 0.5rem + 0.2vw, 0.85rem)"); }
   }
-  .scrolly-step.is-active .scrolly-card { opacity: 1; }
+.scrolly-step.is-active .scrolly-card { opacity: 1; }
+
+// desktop (script adds .has-card-slot): every card lives in one slot at the
+// bottom of the pinned panel. The active card stands still; on a step change
+// the old card glides up and out and the next one glides up into place.
+.scrolly-card-slot {
+  position: absolute;
+  left: 1.5rem;
+  right: 1.5rem;
+  bottom: 1.25rem;
+  z-index: 2;
+  pointer-events: none;
+}
+.scrolly-card-slot .scrolly-card {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 0;
+  width: unquote("min(clamp(50rem, 30rem + 25vw, 66rem), 100%)");
+  opacity: 0;
+  transform: translateY(1.5rem);
+  // leaving: a quick, soft fade so it is gone before the next card arrives
+  transition: opacity 0.5s cubic-bezier(.4,0,.2,1), transform 1s cubic-bezier(.4,0,.2,1);
+  will-change: opacity, transform;
+}
+.scrolly-card-slot .scrolly-card.is-past { transform: translateY(-1.5rem); }
+.scrolly-card-slot .scrolly-card.is-active {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+  // arriving: waits for the old card to clear, then eases in slowly
+  transition: opacity 0.9s cubic-bezier(.25,.1,.25,1) 0.35s, transform 1.1s cubic-bezier(.16,1,.3,1) 0.35s;
+}
 
   // the chart gets the whole panel above the card
   .viz { padding: 2.75rem 1.5rem var(--card-room); }
@@ -393,6 +421,7 @@ dialog:not([open]) { display: none !important; }
 }
 
 .scrolly--wide.scrolly--cards-right .scrolly-card { margin-left: auto; margin-right: 1.5rem; }
+.scrolly--wide.scrolly--cards-right .scrolly-card-slot .scrolly-card { left: auto; right: 0; margin: 0; }
 
 // Staged animations inside a visual (redrawn figures). Elements marked s1..s6
 // appear when the scroll step sets data-stage to that number or higher:
@@ -674,5 +703,5 @@ dialog:not([open]) { display: none !important; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .viz, .viz-bar .fill, .scrolly-step, .viz * { transition: none !important; }
+  .viz, .viz-bar .fill, .scrolly-step, .viz *, .scrolly-card { transition: none !important; }
 }

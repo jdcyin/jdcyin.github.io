@@ -161,9 +161,35 @@ document.addEventListener('change', function (e) {
     var label = root.querySelector('.scrolly-section-label');
     var pillars = root.querySelectorAll('.scrolly-pillars [data-pillar]');
 
+    // Wide chapters on desktop: move each step's text card into one slot at the
+    // bottom of the pinned panel. The active card stands still there; on a step
+    // change the old card glides up and away and the new one glides in.
+    var cards = [];
+    var wide = root.classList.contains('scrolly--wide') && window.matchMedia('(min-width: 64em)').matches;
+    if (wide) {
+      var graphic = root.querySelector('.scrolly-graphic');
+      var slot = document.createElement('div');
+      slot.className = 'scrolly-card-slot';
+      graphic.removeAttribute('aria-hidden');
+      graphic.querySelector('.scrolly-frame').setAttribute('aria-hidden', 'true');
+      graphic.appendChild(slot);
+      Array.prototype.forEach.call(steps, function (s) {
+        var c = s.querySelector('.scrolly-card');
+        if (c) { slot.appendChild(c); cards.push(c); } else { cards.push(null); }
+      });
+      root.classList.add('has-card-slot');
+    }
+
     function activate(step) {
       var key = step.getAttribute('data-viz');
+      var idx = Array.prototype.indexOf.call(steps, step);
       Array.prototype.forEach.call(steps, function (s) { s.classList.toggle('is-active', s === step); });
+      cards.forEach(function (c, i) {
+        if (!c) return;
+        c.classList.toggle('is-active', i === idx);
+        c.classList.toggle('is-past', i < idx);
+        c.classList.toggle('is-next', i > idx);
+      });
       // data-stage on a step builds a visual up in stages: the active visual gets
       // classes stage-1 ... stage-N, which reveal elements marked s1 ... sN
       var stage = parseInt(step.getAttribute('data-stage') || '', 10) || 1;
@@ -184,11 +210,7 @@ document.addEventListener('change', function (e) {
     }
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) { if (entry.isIntersecting) activate(entry.target); });
-    }, {
-      // wide chapters: the step whose card is docked at the bottom of the panel
-      // is the active one; elsewhere, the step in the middle of the screen
-      rootMargin: root.classList.contains('scrolly--wide') ? '-87% 0px -12% 0px' : '-45% 0px -45% 0px'
-    });
+    }, { rootMargin: '-45% 0px -45% 0px' });
     Array.prototype.forEach.call(steps, function (s) { observer.observe(s); });
     if (steps.length) activate(steps[0]);
   }
