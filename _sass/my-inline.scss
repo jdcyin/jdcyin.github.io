@@ -322,8 +322,9 @@ dialog:not([open]) { display: none !important; }
 // Layout variants, one per chapter (.scrolly section):
 //   default        text left, pinned panel right
 //   .scrolly--left pinned panel left, text right
-//   .scrolly--wide pinned panel spans the full width (for original figures);
-//                  text scrolls over it as cards on the left, or on the right
+//   .scrolly--wide the chart fills a full-width pinned panel; the text floats
+//                  along the bottom as a wide, short card (heading left,
+//                  paragraph right), bottom-left by default or bottom-right
 //                  with .scrolly--cards-right
 .scrolly--left {
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
@@ -333,46 +334,61 @@ dialog:not([open]) { display: none !important; }
 
 .scrolly--wide {
   display: block;
-  // break out of the text column on big screens (centred on it, never under
-  // the sidebar): at least the column width, at most 84rem
+  // CSS fallback width; site-extras.js widens it to the area right of the sidebar
   --wide-w: max(100%, min(84rem, 100vw - 40rem));
   width: var(--wide-w);
   margin-left: calc((100% - var(--wide-w)) / 2);
-  --card-w: 17rem;
+  // height kept free at the bottom of the panel for the floating card
+  --card-room: calc(4vh + 11rem);
 
   .scrolly-graphic { position: sticky; top: 10vh; height: 80vh; z-index: 0; }
   .scrolly-steps { position: relative; z-index: 1; margin-top: -80vh; }
-  .scrolly-step { min-height: 95vh; opacity: 1; }
+  .scrolly-step {
+    min-height: 95vh;
+    opacity: 1;
+    justify-content: flex-end;
+    padding-bottom: 10.5vh;   // puts the active card near the bottom of the panel
+  }
   .scrolly-step:first-child { min-height: 80vh; }
-  .scrolly-step:last-child { margin-bottom: 15vh; }
+  .scrolly-step:last-child { margin-bottom: 15vh; min-height: 95vh; }
 
   .scrolly-card {
-    width: var(--card-w);
-    margin-left: 1.25rem;
-    padding: 1.1rem 1.25rem;
-    background: rgba(7, 28, 34, 0.94);
+    width: unquote("min(clamp(50rem, 30rem + 25vw, 66rem), calc(100% - 3rem))");
+    margin-left: 1.5rem;
+    padding: 1rem 1.4rem;
+    display: grid;
+    grid-template-columns: minmax(11rem, 0.8fr) minmax(0, 1.6fr);
+    column-gap: 1.6rem;
+    align-items: start;
+    background: rgba(7, 28, 34, 0.95);
     border: 1px solid rgba(201, 169, 97, 0.55);
     box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.45);
     opacity: 0.35;
     transition: opacity 0.4s ease;
+
+    .scrolly-kicker { grid-column: 1; }
+    h3 { grid-column: 1; margin-bottom: 0; font-size: unquote("clamp(1.15rem, 0.75rem + 0.55vw, 1.6rem)"); }
+    p { grid-column: 2; grid-row: 1 / span 3; margin: 0 0 0.5rem; font-size: unquote("clamp(0.9rem, 0.55rem + 0.42vw, 1.2rem)"); line-height: 1.6; }
+    .scrolly-kicker { font-size: unquote("clamp(0.7rem, 0.5rem + 0.2vw, 0.85rem)"); }
   }
   .scrolly-step.is-active .scrolly-card { opacity: 1; }
 
-  // the figure gets the space beside the card, so the two never overlap
-  .viz { padding: 2.75rem 1.5rem 3.5rem calc(var(--card-w) + 2.75rem); }
+  // the chart gets the whole panel above the card
+  .viz { padding: 2.75rem 1.5rem var(--card-room); }
+  .viz > :not(svg) { width: 100%; max-width: 60rem; align-self: center; }
+  // HTML charts (bars, titles) scale with the screen like the SVG ones
+  .viz { font-size: unquote("clamp(0.85rem, 0.45rem + 0.5vw, 1.25rem)"); }
+  .viz-title, .viz-bar { font-size: 1em; }
+  .viz-bar { grid-template-columns: 12em 1fr 4.5em; margin: 0.6em 0; }
+  .viz-bar .track { height: 0.8em; }
+  .viz-note { font-size: 0.7em; }
   .viz-figure { width: 100%; height: 100%; }
+
+  // pillar strip moves to the top right, out of the card's way
+  .scrolly-pillars { top: 0.75rem; bottom: auto; left: auto; right: 1.25rem; width: min(26rem, 50%); }
 }
 
-.scrolly--wide.scrolly--cards-right {
-  .scrolly-card { margin-left: auto; margin-right: 1.25rem; }
-  .viz { padding: 2.75rem calc(var(--card-w) + 2.75rem) 3.5rem 1.5rem; }
-}
-
-@media screen and (min-width: 64em) and (max-width: 79.99em) {
-  .scrolly--wide { --card-w: 14rem; }
-  .scrolly--wide .scrolly-card { padding: 0.9rem 1rem; }
-  .scrolly--wide .scrolly-card p { font-size: 0.82rem; }
-}
+.scrolly--wide.scrolly--cards-right .scrolly-card { margin-left: auto; margin-right: 1.5rem; }
 
 // Staged animations inside a visual (redrawn figures). Elements marked s1..s6
 // appear when the scroll step sets data-stage to that number or higher:
@@ -627,7 +643,8 @@ dialog:not([open]) { display: none !important; }
     .scrolly-graphic { top: 5.75rem; height: 46vh; }
     .scrolly-steps { margin-top: 0; }
     .scrolly-step { min-height: 88vh; }
-    .scrolly-card { width: auto; margin: 0; padding: 0; background: none; border: 0; box-shadow: none; opacity: 1; }
+    .scrolly-card { display: block; width: auto; margin: 0; padding: 0; background: none; border: 0; box-shadow: none; opacity: 1; }
+    .scrolly-step { justify-content: flex-end; padding-bottom: 2vh; }
     .viz { align-items: center; padding: 2.5rem 1rem 1rem; }
     .viz-figure { width: 100%; height: 100%; }
   }

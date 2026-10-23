@@ -210,7 +210,7 @@ document.addEventListener('change', function (e) {
       var pLeft = parent.getBoundingClientRect().left + parseFloat(getComputedStyle(parent).paddingLeft || 0);
       var left = (drawer ? drawer.getBoundingClientRect().right : 0) + 32;
       var right = document.documentElement.clientWidth - 32;
-      var w = Math.min(right - left, 1400);
+      var w = Math.min(right - left, 1800);
       var x = left + (right - left - w) / 2;
       sec.style.width = w + 'px';
       sec.style.marginLeft = (x - pLeft) + 'px';

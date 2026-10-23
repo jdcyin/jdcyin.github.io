@@ -215,7 +215,7 @@ def aid_network
   ministries.each do |m, ring|
     x, y = pos[m]
     if ring == 0
-      out << %(<g class="s1"><circle cx="#{x}" cy="#{y}" r="21" style="fill:#e6cf95"/><text x="#{x}" y="#{y + 4}" text-anchor="middle" style="fill:#0b2a33;font-weight:700;font-size:11.5px">#{m}</text></g>)
+      out << %(<g class="s1"><circle cx="#{x}" cy="#{y}" r="21" style="fill:#e6cf95"/><text x="#{x}" y="#{y + 4}" text-anchor="middle" style="fill:#0b2a33;stroke:none;font-weight:700;font-size:11.5px">#{m}</text></g>)
     else
       out << %(<g class="s1"><circle cx="#{x}" cy="#{y}" r="5" style="fill:#e6cf95"/><text x="#{x}" y="#{y - 9}" text-anchor="middle" style="font-size:10px">#{m}</text></g>)
     end
