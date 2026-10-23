@@ -1,12 +1,13 @@
+require_relative "t20_flows"
+
 # Replacement chapters 2, 4 and 6 for make_t20c.rb (redrawn, staged figures).
 # Step tuples: [viz, section, pillar, kicker, heading, paragraphs, stage]
 SRC_NOTE = %(<div class="viz-note">Redrawn from data in Bloom et al., BMJ 2019 (Fig %s).</div>)
 
 CH2 = lambda do
   chapter("scrolly--wide", "Leaving no one behind", [
-    ["migrants", flow_chart(id: "mig", unit: "m",
-      left: { "Africa" => 36.2, "Asia" => 105.6, "Europe" => 61.2, "Latin America" => 37.8, "Northern America" => 4.4, "Oceania" => 1.9 },
-      right: { "Africa" => 21.7, "Asia" => 75.9, "Europe" => 76.8, "Latin America" => 9.2, "Northern America" => 55.3, "Oceania" => 8.3 },
+    ["migrants", sankey_chart(id: "mig", unit: "m", flows: MIGRANT_FLOWS,
+      src_totals: MIGRANT_SOURCE_TOTALS, dst_totals: MIGRANT_DEST_TOTALS,
       left_title: "Where migrants come from", right_title: "Where they live now",
       highlight: "Northern America",
       callouts: [[2, "Northern America: 4.4m migrants from it, 55.3m living there"]]) + "\n" + SRC_NOTE % "1"],
@@ -21,15 +22,13 @@ CH2 = lambda do
       <div class="viz-bar"><span>Other regions</span><span class="track"><span class="fill" style="--w: 70.2%"></span></span><span class="val">27.5m</span></div>
       <div class="viz-note">163.8 million labour migrants in total: 86.5% aged 25-64, 41.6% women. Redrawn from data in Bloom et al., BMJ 2019 (Fig 1).</div>
     H
-    ["doctors", flow_chart(id: "doc", unit: "k",
-      left: { "Africa" => 246, "Asia" => 1021, "Europe" => 978, "Latin America" => 111, "Northern America" => 369, "Oceania" => 34 },
-      right: { "Asia" => 110, "Europe" => 971, "Latin America" => 13, "Northern America" => 1563, "Oceania" => 102 },
+    ["doctors", sankey_chart(id: "doc", unit: "k", flows: DOCTOR_FLOWS,
+      src_totals: DOCTOR_SOURCE_TOTALS, dst_totals: DOCTOR_DEST_TOTALS,
       left_title: "Where doctors trained", right_title: "Where they work (OECD)",
       highlight: "Northern America",
       callouts: [[2, "Northern America employs 1.56 million foreign-trained doctors"]]) + "\n" + SRC_NOTE % "2, 2012-16"],
-    ["nurses", flow_chart(id: "nur", unit: "k",
-      left: { "Africa" => 73, "Asia" => 371, "Europe" => 724, "Latin America" => 38, "Northern America" => 36, "Oceania" => 47 },
-      right: { "Asia" => 43, "Europe" => 837, "Latin America" => 1.7, "Northern America" => 191, "Oceania" => 210 },
+    ["nurses", sankey_chart(id: "nur", unit: "k", flows: NURSE_FLOWS,
+      src_totals: NURSE_SOURCE_TOTALS, dst_totals: NURSE_DEST_TOTALS,
       left_title: "Where nurses trained", right_title: "Where they work (OECD)",
       highlight: "Europe",
       callouts: [[1, "Europe employs 837,000 foreign-trained nurses"]], delay_right: 0.4, s_right: 1) + "\n" + SRC_NOTE % "2, 2012-16"],

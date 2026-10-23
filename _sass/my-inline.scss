@@ -396,7 +396,20 @@ dialog:not([open]) { display: none !important; }
 //   .grow.grow-x / .grow-y        scales in from the left / top
 //   .only-N                       visible only at exactly stage N
 .viz [class*="s"]:not(.draw) { transition: opacity 0.7s ease, transform 0.9s ease; }
-.viz .draw { stroke-dasharray: 1; transition: stroke-dashoffset 1.4s ease; }
+.viz .draw { stroke-dasharray: 1; transition: stroke-dashoffset 1.4s ease, opacity 0.2s ease; }
+// thick drawn lines leave slivers at dashoffset 1, so also hide them until their stage
+.viz .draw.s1 { opacity: 0; }
+.viz.stage-1 .draw.s1 { opacity: 1; }
+.viz .draw.s2 { opacity: 0; }
+.viz.stage-2 .draw.s2 { opacity: 1; }
+.viz .draw.s3 { opacity: 0; }
+.viz.stage-3 .draw.s3 { opacity: 1; }
+.viz .draw.s4 { opacity: 0; }
+.viz.stage-4 .draw.s4 { opacity: 1; }
+.viz .draw.s5 { opacity: 0; }
+.viz.stage-5 .draw.s5 { opacity: 1; }
+.viz .draw.s6 { opacity: 0; }
+.viz.stage-6 .draw.s6 { opacity: 1; }
 .viz .grow { transform-box: fill-box; transition: transform 0.9s ease; }
 .viz .grow-x { transform-origin: left center; }
 .viz .grow-y { transform-origin: center top; }

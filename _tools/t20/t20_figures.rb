@@ -233,3 +233,82 @@ def aid_network
   out << "</svg>"
   [out.join("\n"), counts]
 end
+
+# A proper Sankey diagram: one ribbon per origin -> destination corridor,
+# coloured by origin, width proportional to the flow. Ribbons leave each source
+# bar in destination order and arrive at each destination bar stacked by origin
+# (the layout of the paper's figures). Stage s_left grows the source bars;
+# stage s_right draws every ribbon left to right (staggered by origin) and then
+# fills the destination bars.
+def sankey_chart(id:, flows:, src_totals:, dst_totals:, unit:, left_title:, right_title:,
+                 s_left: 1, s_right: 2, callouts: [], highlight: nil, delay_right: 0)
+  srcs = src_totals.keys
+  dsts = dst_totals.keys
+  top, avail, gap = 46, 300, 8
+  xl, xr, bw = 196, 470, 14
+  # one scale for both columns, based on the flows themselves so ribbons fit bars
+  out_tot = srcs.to_h { |s| [s, dsts.sum { |d| flows[s][d].to_f }] }
+  in_tot  = dsts.to_h { |d| [d, srcs.sum { |s| flows[s][d].to_f }] }
+  grand = [out_tot.values.sum, in_tot.values.sum].max
+  k = (avail - gap * ([srcs.size, dsts.size].max - 1)) / grand
+
+  sy = {}; y = top
+  srcs.each { |s| sy[s] = y; y += [out_tot[s] * k, 1.5].max + gap }
+  dy = {}; y = top
+  dsts.each { |d| dy[d] = y; y += [in_tot[d] * k, 1.5].max + gap }
+
+  fmt = ->(v) { v >= 100 ? v.round.to_s.reverse.scan(/\d{1,3}/).join(",").reverse : v.to_s }
+  out = [%(<svg class="redraw" viewBox="40 0 610 430" role="img" aria-label="#{esc(left_title)} and #{esc(right_title)}, with a ribbon for each corridor">)]
+  out << %(<text x="#{xl + bw / 2}" y="24" text-anchor="middle" class="gold s#{s_left}" style="font-size:13px">#{esc(left_title)}</text>)
+  out << %(<text x="#{xr + bw / 2}" y="24" text-anchor="middle" class="gold s#{s_right}" style="font-size:13px;transition-delay:1s">#{esc(right_title)}</text>)
+
+  # ribbons (stroked centre lines, so they can draw themselves left to right)
+  s_off = Hash.new(0.0); d_off = Hash.new(0.0)
+  ribbons = []
+  srcs.each_with_index do |s, si|
+    dsts.each do |d|
+      v = flows[s][d].to_f
+      next if v <= 0
+      w = v * k
+      y1 = sy[s] + s_off[s] + w / 2; s_off[s] += w
+      ribbons << [si, s, d, v, w, y1]
+    end
+  end
+  # arrival order at each destination: by origin
+  srcs.each do |s|
+    ribbons.select { |r| r[1] == s }.each do |r|
+      r << dy[r[2]] + d_off[r[2]] + r[4] / 2
+      d_off[r[2]] += r[4]
+    end
+  end
+  x1, x2 = xl + bw, xr
+  mx = (x1 + x2) / 2.0
+  ribbons.sort_by { |r| -r[4] }.each do |si, s, d, v, w, y1, y2|
+    hl = highlight && d == highlight ? 0.85 : 0.6
+    out << %(<path class="draw s#{s_right}" pathLength="1" d="M#{x1} #{y1.round(1)} C#{mx} #{y1.round(1)} #{mx} #{y2.round(1)} #{x2} #{y2.round(1)}" style="fill:none;stroke:#{REGION_COLOURS[s]};stroke-width:#{[w, 1].max.round(2)};stroke-opacity:#{hl};transition-delay:#{(si * 0.18).round(2)}s"><title>#{esc(s)} to #{esc(d)}: #{fmt.call(v.round(v >= 100 ? 0 : 1))}#{unit}</title></path>)
+  end
+
+  left_labels = spread(srcs.map { |s| sy[s] + out_tot[s] * k / 2 }, 30, top + 6, top + avail + 40)
+  srcs.each_with_index do |s, i|
+    h = [out_tot[s] * k, 1.5].max
+    out << %(<rect class="grow grow-y s#{s_left}" x="#{xl}" y="#{sy[s].round(1)}" width="#{bw}" height="#{h.round(1)}" style="fill:#{REGION_COLOURS[s]};transition-delay:#{(i * 0.08).round(2)}s"/>)
+    ly = left_labels[i]
+    out << %(<text class="s#{s_left}" x="#{xl - 10}" y="#{(ly - 2).round(1)}" text-anchor="end" style="transition-delay:#{(i * 0.08).round(2)}s">#{esc(s)}</text>)
+    out << %(<text class="s#{s_left}" x="#{xl - 10}" y="#{(ly + 13).round(1)}" text-anchor="end" style="fill:#{REGION_COLOURS[s]};font-size:12px;transition-delay:#{(i * 0.08).round(2)}s">#{fmt.call(src_totals[s])}#{unit}</text>)
+  end
+  right_labels = spread(dsts.map { |d| dy[d] + in_tot[d] * k / 2 }, 30, top + 6, top + avail + 40)
+  dsts.each_with_index do |d, i|
+    dl = (1.3 + delay_right + i * 0.08).round(2)
+    h = [in_tot[d] * k, 1.5].max
+    stroke = highlight == d ? ";stroke:#e6cf95;stroke-width:1.5" : ""
+    out << %(<rect class="grow grow-y s#{s_right}" x="#{xr}" y="#{dy[d].round(1)}" width="#{bw}" height="#{h.round(1)}" style="fill:#8f9aa3;transition-delay:#{dl}s#{stroke}"/>)
+    ly = right_labels[i]
+    out << %(<text class="s#{s_right}" x="#{xr + bw + 10}" y="#{(ly - 2).round(1)}" style="transition-delay:#{dl}s">#{esc(d)}</text>)
+    out << %(<text class="s#{s_right}" x="#{xr + bw + 10}" y="#{(ly + 13).round(1)}" style="fill:#b9b2a2;font-size:12px;transition-delay:#{dl}s">#{fmt.call(dst_totals[d])}#{unit}</text>)
+  end
+  callouts.each_with_index do |(stage, text), i|
+    out << %(<text class="callout s#{stage}" x="#{(xl + xr + bw) / 2}" y="#{top + avail + 62 + i * 20}" text-anchor="middle" style="transition-delay:#{(2 + i * 0.3).round(1)}s">#{esc(text)}</text>)
+  end
+  out << "</svg>"
+  out.join("\n")
+end
