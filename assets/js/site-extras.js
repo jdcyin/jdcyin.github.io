@@ -159,12 +159,15 @@ document.addEventListener('change', function (e) {
     var steps = root.querySelectorAll('.scrolly-step');
     var vizzes = root.querySelectorAll('.viz');
     var label = root.querySelector('.scrolly-section-label');
+    var pillars = root.querySelectorAll('.scrolly-pillars [data-pillar]');
 
     function activate(step) {
       var key = step.getAttribute('data-viz');
       Array.prototype.forEach.call(steps, function (s) { s.classList.toggle('is-active', s === step); });
       Array.prototype.forEach.call(vizzes, function (v) { v.classList.toggle('is-active', v.getAttribute('data-viz') === key); });
       if (label) label.textContent = step.getAttribute('data-section') || '';
+      var pillar = step.getAttribute('data-pillar');
+      Array.prototype.forEach.call(pillars, function (p) { p.classList.toggle('is-active', p.getAttribute('data-pillar') === pillar); });
     }
 
     if (!('IntersectionObserver' in window)) {
