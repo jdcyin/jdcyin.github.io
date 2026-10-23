@@ -164,7 +164,14 @@ document.addEventListener('change', function (e) {
     function activate(step) {
       var key = step.getAttribute('data-viz');
       Array.prototype.forEach.call(steps, function (s) { s.classList.toggle('is-active', s === step); });
-      Array.prototype.forEach.call(vizzes, function (v) { v.classList.toggle('is-active', v.getAttribute('data-viz') === key); });
+      // data-stage on a step builds a visual up in stages: the active visual gets
+      // classes stage-1 ... stage-N, which reveal elements marked s1 ... sN
+      var stage = parseInt(step.getAttribute('data-stage') || '', 10) || 1;
+      Array.prototype.forEach.call(vizzes, function (v) {
+        var on = v.getAttribute('data-viz') === key;
+        v.classList.toggle('is-active', on);
+        for (var k = 1; k <= 6; k++) v.classList.toggle('stage-' + k, on && k <= stage);
+      });
       if (label) label.textContent = step.getAttribute('data-section') || '';
       var pillar = step.getAttribute('data-pillar');
       Array.prototype.forEach.call(pillars, function (p) { p.classList.toggle('is-active', p.getAttribute('data-pillar') === pillar); });
@@ -189,4 +196,30 @@ document.addEventListener('change', function (e) {
   init();
   var pushState = document.getElementById('_pushState');
   if (pushState) pushState.addEventListener('hy-push-state-after', init);
+})();
+
+// Full-width scrolly chapters: stretch across the whole area right of the
+// sidebar (CSS alone can only centre them on the text column). Desktop only.
+(function () {
+  function widen() {
+    var desktop = window.matchMedia('(min-width: 64em)').matches;
+    var drawer = document.querySelector('hy-drawer');
+    Array.prototype.forEach.call(document.querySelectorAll('.scrolly--wide'), function (sec) {
+      if (!desktop) { sec.style.width = ''; sec.style.marginLeft = ''; return; }
+      var parent = sec.parentElement;
+      var pLeft = parent.getBoundingClientRect().left + parseFloat(getComputedStyle(parent).paddingLeft || 0);
+      var left = (drawer ? drawer.getBoundingClientRect().right : 0) + 32;
+      var right = document.documentElement.clientWidth - 32;
+      var w = Math.min(right - left, 1400);
+      var x = left + (right - left - w) / 2;
+      sec.style.width = w + 'px';
+      sec.style.marginLeft = (x - pLeft) + 'px';
+    });
+  }
+  widen();
+  window.addEventListener('load', widen);
+  var t;
+  window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(widen, 150); });
+  var pushState = document.getElementById('_pushState');
+  if (pushState) pushState.addEventListener('hy-push-state-after', widen);
 })();
