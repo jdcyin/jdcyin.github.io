@@ -184,7 +184,11 @@ document.addEventListener('change', function (e) {
     }
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) { if (entry.isIntersecting) activate(entry.target); });
-    }, { rootMargin: '-45% 0px -45% 0px' });
+    }, {
+      // wide chapters: the step whose card is docked at the bottom of the panel
+      // is the active one; elsewhere, the step in the middle of the screen
+      rootMargin: root.classList.contains('scrolly--wide') ? '-87% 0px -12% 0px' : '-45% 0px -45% 0px'
+    });
     Array.prototype.forEach.call(steps, function (s) { observer.observe(s); });
     if (steps.length) activate(steps[0]);
   }

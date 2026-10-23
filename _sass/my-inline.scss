@@ -347,12 +347,16 @@ dialog:not([open]) { display: none !important; }
     min-height: 95vh;
     opacity: 1;
     justify-content: flex-end;
-    padding-bottom: 10.5vh;   // puts the active card near the bottom of the panel
+    padding-bottom: 0;
   }
   .scrolly-step:first-child { min-height: 80vh; }
   .scrolly-step:last-child { margin-bottom: 15vh; min-height: 95vh; }
 
+  // each card docks at one fixed spot (the bottom of the panel) while its step
+  // scrolls past, then moves on: sticky within its own step
   .scrolly-card {
+    position: sticky;
+    bottom: calc(10vh + 1.25rem);
     width: unquote("min(clamp(50rem, 30rem + 25vw, 66rem), calc(100% - 3rem))");
     margin-left: 1.5rem;
     padding: 1rem 1.4rem;
@@ -363,8 +367,8 @@ dialog:not([open]) { display: none !important; }
     background: rgba(7, 28, 34, 0.95);
     border: 1px solid rgba(201, 169, 97, 0.55);
     box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.45);
-    opacity: 0.35;
-    transition: opacity 0.4s ease;
+    opacity: 0;
+    transition: opacity 0.35s ease;
 
     .scrolly-kicker { grid-column: 1; }
     h3 { grid-column: 1; margin-bottom: 0; font-size: unquote("clamp(1.15rem, 0.75rem + 0.55vw, 1.6rem)"); }
@@ -656,7 +660,7 @@ dialog:not([open]) { display: none !important; }
     .scrolly-graphic { top: 5.75rem; height: 46vh; }
     .scrolly-steps { margin-top: 0; }
     .scrolly-step { min-height: 88vh; }
-    .scrolly-card { display: block; width: auto; margin: 0; padding: 0; background: none; border: 0; box-shadow: none; opacity: 1; }
+    .scrolly-card { position: static; display: block; width: auto; margin: 0; padding: 0; background: none; border: 0; box-shadow: none; opacity: 1; }
     .scrolly-step { justify-content: flex-end; padding-bottom: 2vh; }
     .viz { align-items: center; padding: 2.5rem 1rem 1rem; }
     .viz-figure { width: 100%; height: 100%; }
