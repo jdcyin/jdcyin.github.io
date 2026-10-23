@@ -319,6 +319,67 @@ dialog:not([open]) { display: none !important; }
   color: #c9a961;
 }
 
+// Layout variants, one per chapter (.scrolly section):
+//   default        text left, pinned panel right
+//   .scrolly--left pinned panel left, text right
+//   .scrolly--wide pinned panel spans the full width (for original figures);
+//                  text scrolls over it as cards on the left, or on the right
+//                  with .scrolly--cards-right
+.scrolly--left {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  .scrolly-graphic { grid-column: 1; }
+  .scrolly-steps { grid-column: 2; }
+}
+
+.scrolly--wide {
+  display: block;
+
+  .scrolly-graphic { position: sticky; top: 10vh; height: 80vh; z-index: 0; }
+  .scrolly-steps { position: relative; z-index: 1; margin-top: -80vh; }
+  .scrolly-step { min-height: 95vh; opacity: 1; }
+  .scrolly-step:first-child { min-height: 80vh; }
+  .scrolly-step:last-child { margin-bottom: 15vh; }
+
+  .scrolly-card {
+    max-width: 16.5rem;
+    margin-left: 1.25rem;
+    padding: 1.1rem 1.25rem;
+    background: rgba(7, 28, 34, 0.94);
+    border: 1px solid rgba(201, 169, 97, 0.55);
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.45);
+    opacity: 0.35;
+    transition: opacity 0.4s ease;
+  }
+  .scrolly-step.is-active .scrolly-card { opacity: 1; }
+
+  .viz { align-items: flex-end; padding-right: 2rem; }
+  .viz-figure { width: 67%; }
+}
+
+.scrolly--wide.scrolly--cards-right {
+  .scrolly-card { margin-left: auto; margin-right: 1.25rem; }
+  .viz { align-items: flex-start; padding-left: 2rem; padding-right: 1.5rem; }
+}
+
+// an original figure from the paper, shown on a light card
+.viz-figure {
+  margin: 0;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: 62vh;
+    object-fit: contain;
+    background: #fff;
+    padding: 0.6rem;
+    border-radius: 2px;
+  }
+  figcaption { margin-top: 0.5rem; color: #8f8a7e; font-size: 0.68rem; line-height: 1.4; }
+}
+
 // Optional row of numbered "pillars" along the bottom of the panel; the one
 // matching the active step's data-pillar lights up (used on the T20 page).
 .scrolly-pillars {
@@ -456,6 +517,16 @@ dialog:not([open]) { display: none !important; }
   }
   .viz { padding: 2.5rem 1rem 1rem; font-size: 0.78rem; }
   .scrolly-pillars { display: none; }
+  // phones: every layout collapses to the same stacked view
+  .scrolly--wide {
+    .scrolly-graphic { top: 5.75rem; height: 46vh; }
+    .scrolly-steps { margin-top: 0; }
+    .scrolly-step { min-height: 88vh; }
+    .scrolly-card { max-width: none; margin: 0; padding: 0; background: none; border: 0; box-shadow: none; opacity: 1; }
+    .viz { align-items: center; padding: 2.5rem 1rem 1rem; }
+    .viz-figure { width: 100%; }
+  }
+  .viz-figure img { max-height: 34vh; }
   .viz-big { font-size: 2.4rem; }
   .viz-bar { grid-template-columns: 7.5rem 1fr 2.6rem; font-size: 0.7rem; }
 }
