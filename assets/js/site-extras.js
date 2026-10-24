@@ -178,6 +178,20 @@ document.addEventListener('change', function (e) {
         if (c) { slot.appendChild(c); cards.push(c); } else { cards.push(null); }
       });
       root.classList.add('has-card-slot');
+
+      // Reserve exactly enough room under the chart for the tallest card in this
+      // chapter (cards wrap differently at every window size), so a card never
+      // rolls over the chart.
+      var reserveRoom = function () {
+        var tallest = 0;
+        cards.forEach(function (c) { if (c) tallest = Math.max(tallest, c.offsetHeight); });
+        var below = parseFloat(getComputedStyle(slot).bottom) || 0;
+        root.style.setProperty('--card-room', Math.ceil(tallest + below + 14) + 'px');
+      };
+      reserveRoom();
+      window.addEventListener('load', reserveRoom);
+      var roomTimer;
+      window.addEventListener('resize', function () { clearTimeout(roomTimer); roomTimer = setTimeout(reserveRoom, 150); });
     }
 
     function activate(step) {

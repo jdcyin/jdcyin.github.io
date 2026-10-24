@@ -338,11 +338,14 @@ dialog:not([open]) { display: none !important; }
   --wide-w: max(100%, min(84rem, 100vw - 40rem));
   width: var(--wide-w);
   margin-left: calc((100% - var(--wide-w)) / 2);
-  // height kept free at the bottom of the panel for the floating card
-  --card-room: calc(4vh + 11rem);
+  // Everything inside the panel is sized relative to the panel itself
+  // (container units: 1cqh = 1% of panel height, 1cqw = 1% of its width), so
+  // the chart and the text card grow and shrink together with the window.
+  // Height kept free at the bottom of the panel for the card:
+  --card-room: 23cqh;
 
-  .scrolly-graphic { position: sticky; top: 10vh; height: 80vh; z-index: 0; }
-  .scrolly-steps { position: relative; z-index: 1; margin-top: -80vh; }
+  .scrolly-graphic { position: sticky; top: 5vh; height: 86vh; z-index: 0; container-type: size; }
+  .scrolly-steps { position: relative; z-index: 1; margin-top: -86vh; }
   .scrolly-step {
     min-height: 95vh;
     opacity: 1;
@@ -353,12 +356,13 @@ dialog:not([open]) { display: none !important; }
   .scrolly-step:last-child { margin-bottom: 15vh; min-height: 95vh; }
 
   .scrolly-card {
-    width: unquote("min(clamp(50rem, 30rem + 25vw, 66rem), calc(100% - 3rem))");
+    width: unquote("min(64cqw, 70rem)");
     margin-left: 1.5rem;
-    padding: 1rem 1.4rem;
+    padding: unquote("1.6cqh 2.2cqh");
     display: grid;
-    grid-template-columns: minmax(11rem, 0.8fr) minmax(0, 1.6fr);
-    column-gap: 1.6rem;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+    grid-template-rows: min-content min-content 1fr;
+    column-gap: unquote("2.6cqh");
     align-items: start;
     background: rgba(7, 28, 34, 0.95);
     border: 1px solid rgba(201, 169, 97, 0.55);
@@ -367,9 +371,9 @@ dialog:not([open]) { display: none !important; }
     transition: opacity 0.4s ease;
 
     .scrolly-kicker { grid-column: 1; }
-    h3 { grid-column: 1; margin-bottom: 0; font-size: unquote("clamp(1.15rem, 0.75rem + 0.55vw, 1.6rem)"); }
-    p { grid-column: 2; grid-row: 1 / span 3; margin: 0 0 0.5rem; font-size: unquote("clamp(0.9rem, 0.55rem + 0.42vw, 1.2rem)"); line-height: 1.6; }
-    .scrolly-kicker { font-size: unquote("clamp(0.7rem, 0.5rem + 0.2vw, 0.85rem)"); }
+    h3 { grid-column: 1; margin: 0.35em 0 0; line-height: 1.3; font-size: unquote("clamp(0.95rem, 3cqh, 1.9rem)"); }
+    p { grid-column: 2; grid-row: 1 / span 3; margin: 0; font-size: unquote("clamp(0.75rem, 2.05cqh, 1.35rem)"); line-height: 1.55; }
+    .scrolly-kicker { font-size: unquote("clamp(0.6rem, 1.45cqh, 0.95rem)"); }
   }
 .scrolly-step.is-active .scrolly-card { opacity: 1; }
 
@@ -378,9 +382,9 @@ dialog:not([open]) { display: none !important; }
 // the old card glides up and out and the next one glides up into place.
 .scrolly-card-slot {
   position: absolute;
-  left: 1.5rem;
-  right: 1.5rem;
-  bottom: 1.25rem;
+  left: unquote("2.4cqh");
+  right: unquote("2.4cqh");
+  bottom: unquote("2.4cqh");
   z-index: 2;
   pointer-events: none;
 }
@@ -389,7 +393,9 @@ dialog:not([open]) { display: none !important; }
   left: 0;
   bottom: 0;
   margin: 0;
-  width: unquote("min(clamp(50rem, 30rem + 25vw, 66rem), 100%)");
+  // spans the full panel width, lined up with the chart area
+  right: 0;
+  width: auto;
   opacity: 0;
   transform: translateY(1.5rem);
   // leaving: a quick, soft fade so it is gone before the next card arrives
@@ -406,22 +412,34 @@ dialog:not([open]) { display: none !important; }
 }
 
   // the chart gets the whole panel above the card
-  .viz { padding: 2.75rem 1.5rem var(--card-room); }
+  .viz { padding: unquote("max(8cqh, 4.2rem) 2.4cqh") var(--card-room); }
   .viz > :not(svg) { width: 100%; max-width: 60rem; align-self: center; }
   // HTML charts (bars, titles) scale with the screen like the SVG ones
-  .viz { font-size: unquote("clamp(0.85rem, 0.45rem + 0.5vw, 1.25rem)"); }
+  .viz { font-size: unquote("clamp(0.75rem, 2.1cqh, 1.4rem)"); }
   .viz-title, .viz-bar { font-size: 1em; }
   .viz-bar { grid-template-columns: 12em 1fr 4.5em; margin: 0.6em 0; }
   .viz-bar .track { height: 0.8em; }
   .viz-note { font-size: 0.7em; }
   .viz-figure { width: 100%; height: 100%; }
+  // the source footnote ("Redrawn from...") sits top-left under the section
+  // label, where the text card can never cover it
+  .viz > .viz-note:last-child {
+    position: absolute;
+    top: 2.3rem;
+    left: 1.25rem;
+    width: auto;
+    max-width: 55%;
+    margin: 0;
+    text-align: left;
+    font-size: unquote("clamp(0.6rem, 1.3cqh, 0.85rem)");
+  }
 
   // pillar strip moves to the top right, out of the card's way
   .scrolly-pillars { top: 0.75rem; bottom: auto; left: auto; right: 1.25rem; width: min(26rem, 50%); }
 }
 
 .scrolly--wide.scrolly--cards-right .scrolly-card { margin-left: auto; margin-right: 1.5rem; }
-.scrolly--wide.scrolly--cards-right .scrolly-card-slot .scrolly-card { left: auto; right: 0; margin: 0; }
+.scrolly--wide.scrolly--cards-right .scrolly-card-slot .scrolly-card { left: 0; right: 0; margin: 0; }
 
 // Staged animations inside a visual (redrawn figures). Elements marked s1..s6
 // appear when the scroll step sets data-stage to that number or higher:
@@ -669,12 +687,16 @@ dialog:not([open]) { display: none !important; }
 // Phones and narrow windows: visual pinned under the banner, text below it
 @media screen and (max-width: 63.99em) {
   .scrolly { display: block; }
+  // the pinned chart sits ABOVE the text, with a page-coloured strip up to the
+  // banner, so text slides underneath it and is only seen in the clear space below
   .scrolly-graphic {
-    top: 5.75rem;
-    height: 46vh;
-    z-index: 1;
+    top: 5.25rem;
+    height: calc(46vh + 0.5rem);
+    padding-top: 0.5rem;
+    background: var(--body-bg);
+    z-index: 2;
   }
-  .scrolly-steps { position: relative; z-index: 0; }
+  .scrolly-steps { position: relative; z-index: 1; }
   // text sits at the bottom of each step, in the visible area below the panel
   .scrolly-step {
     min-height: 88vh;
@@ -686,12 +708,12 @@ dialog:not([open]) { display: none !important; }
   .scrolly-pillars { display: none; }
   // phones: every layout collapses to the same stacked view
   .scrolly--wide {
-    .scrolly-graphic { top: 5.75rem; height: 46vh; }
-    .scrolly-steps { margin-top: 0; }
+    .scrolly-graphic { top: 5.25rem; height: calc(46vh + 0.5rem); z-index: 2; }
+    .scrolly-steps { margin-top: 0; z-index: 1; }
     .scrolly-step { min-height: 88vh; }
     .scrolly-card { position: static; display: block; width: auto; margin: 0; padding: 0; background: none; border: 0; box-shadow: none; opacity: 1; }
     .scrolly-step { justify-content: flex-end; padding-bottom: 2vh; }
-    .viz { align-items: center; padding: 2.5rem 1rem 1rem; }
+    .viz { align-items: center; padding: 3.6rem 1rem 1rem; }
     .viz-figure { width: 100%; height: 100%; }
   }
   .scrolly--wide { width: auto; margin-left: 0; }
